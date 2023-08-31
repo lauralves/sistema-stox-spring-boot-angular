@@ -1,0 +1,8 @@
+---
+rolePolicy:
+  clientId: sge-backend
+  name: "admin:role:policy"
+  description: Role ADMIN
+  client:
+    name: "sge-backend"
+    roles: ["ADMIN"]

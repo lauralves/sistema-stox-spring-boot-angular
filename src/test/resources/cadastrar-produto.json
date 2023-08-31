@@ -1,0 +1,10 @@
+{
+  "descontinuado": 0,
+  "descricao": "desc teste",
+  "dtEntrada":"2023-08-30 21:09:16.000000",
+  "nome": "produto nome",
+  "precoCompraUnitario": 5.0,
+  "precoVendaUnitario": 86.0,
+  "quantidadeEntrada":100,
+  "quantidadeSaida": 5
+}

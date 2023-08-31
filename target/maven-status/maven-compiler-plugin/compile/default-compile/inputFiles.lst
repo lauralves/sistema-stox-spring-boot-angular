@@ -1,0 +1,16 @@
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/repository/FornecedorRepository.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/domain/Estoque.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/service/FornecedorService.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/repository/FuncionarioRepository.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/rest/FornecedorRest.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/RefactorSistemaSenacApplication.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/service/FuncionarioService.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/domain/Produto.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/repository/ProdutoRepository.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/rest/FuncionarioRest.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/domain/TipoFuncionario.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/domain/HistoricoVenda.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/domain/Funcionario.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/service/CadastrarProdutoService.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/rest/ProdutoRest.java
+/home/lauralves/IdeaProjects/refactor-sistema-senac/src/main/java/com/example/demo/domain/Fornecedor.java

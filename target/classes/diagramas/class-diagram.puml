@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam defaultFontName Droid Sans
+skinparam linetype ortho
+skinparam nodesep 50
+skinparam class {
+    BackgroundColor White
+    BackgroundColor<<Setting>> Wheat
+}
+
+set separator none
+package ItemFlow <<Frame>>{
+    class Produto {
+        - id: Long
+        - nome: String
+        - descricao: String
+        - descontinuado: Boolean
+        - precoVendaUnitario: Double
+        - precoCompraUnitario: Double
+    }
+
+    class Estoque {
+         - quantidadeEntrada: Long
+         - quantidadeSaida: Long
+         - dtEntrada: LocalDateTime
+         - dtSaida: LocalDateTime
+    }
+
+    class Funcionario {
+        - id: Long
+        - nome: String
+        - login: String
+        - senha: String
+    }
+
+    class HistoricoVenda {
+        - id: Long
+        - valorTotal: Double
+        - dtVenda: LocalDateTime
+        - quantidade: Integer
+        - comissao: Double
+
+    }
+    class Fornecedor <<Setting>>{
+        - id: Long
+        - nome: String
+    }
+    class TipoFuncionario <<Setting>> {
+        - id: Long
+        - tipo: String
+    }
+
+
+Estoque "1..*" --> "1" Funcionario
+Fornecedor "1" <-- "1..*" Produto
+Funcionario "1" --> "1..*" TipoFuncionario
+HistoricoVenda "1" -> "1..*" "Estoque"
+Produto "1..*" <-- "1" Estoque
+}
+
+@enduml

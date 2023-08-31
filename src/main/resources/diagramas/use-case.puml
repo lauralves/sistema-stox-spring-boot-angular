@@ -1,0 +1,29 @@
+@startuml
+
+skinparam defaultFontName Droid Sans
+skinparam nodesep 50
+left to right direction
+
+package ItemFlow {
+
+actor funcionario as funcionario
+actor administrador as admin
+
+usecase "Cadastrar produto" as cadastrarProduto
+usecase "Atualizar produto" as atualizarProduto
+usecase "Excluir produto" as excluirProduto
+usecase "Verificar disponibilidade do produto" as verificarProduto
+usecase "Vender produto" as vendaProduto
+usecase "Cadastrar fornecedor" as fornecedor
+
+"admin" -- fornecedor
+"admin" -- cadastrarProduto
+"admin" -- atualizarProduto
+"admin" -- excluirProduto
+"admin" -- verificarProduto
+"admin" -- vendaProduto
+funcionario -- verificarProduto
+funcionario -- vendaProduto
+
+
+@enduml

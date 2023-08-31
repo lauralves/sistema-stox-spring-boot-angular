@@ -1,0 +1,13 @@
+---
+client:
+  name: "sge-backend"
+  secret: ${keycloak.client.secret}
+  baseUrl: /sge
+  redirectUris: ["/sge/*"]
+  serviceAccountEnabled: true
+  authorizationServicesEnabled: true
+  roles:
+    - name: "ADMIN"
+      description: Role de Administrador
+    - name: "FUNCIONARIO"
+      description: Role de Funcionario

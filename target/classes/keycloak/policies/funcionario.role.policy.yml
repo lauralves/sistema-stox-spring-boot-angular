@@ -1,0 +1,8 @@
+---
+rolePolicy:
+  clientId: sge-backend
+  name: "funcionario:role:policy"
+  description: Role FUNCIONARIO
+  client:
+    name: "sge-backend"
+    roles: ["FUNCIONARIO"]
