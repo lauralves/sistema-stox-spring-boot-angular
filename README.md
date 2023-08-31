@@ -1,6 +1,8 @@
 # refactor-sistema-senac
 Refatorando sistema desenvolvido no curso de Programador de Sistemas no SENAC para que se adeque as tecnologias mais atuais, utilizando Spring Boot, Angular e Docker.
 
+O sistema foi adaptado de um estoque de uma pizzaria para um estoque de produtos gerais, não se limitando ao seu propósito inicial.
+
 Sistema antigo: https://github.com/lauralves/sistema-pizzaria-java
 
 Diagrama de caso de uso:
@@ -9,6 +11,7 @@ Diagrama de caso de uso:
 
 Diagrama de classe:
 
-![diagram-12559473464630403803](https://github.com/lauralves/refactor-sistema-senac/assets/105663730/c02f511d-990a-4259-8d50-ff80065a7005)
+![diagram-10138868031365747985](https://github.com/lauralves/sistema-itemflow-spring-boot-angular/assets/105663730/8d3b3258-4671-4edd-8db6-72788d0dc49a)
+
 
 
