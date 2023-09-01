@@ -55,8 +55,8 @@ package ItemFlow <<Frame>>{
 Estoque "1..*" --> "1" Funcionario
 Fornecedor "1" <-- "1..*" Produto
 Funcionario "1" --> "1..*" TipoFuncionario
-HistoricoVenda "1" -> "1..*" "Estoque"
-Produto "1..*" <-- "1" Estoque
+HistoricoVenda "1" -> "1..*" "Produto"
+Produto "1..*" --> "1" Estoque
 }
 
 @enduml
