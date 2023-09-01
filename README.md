@@ -7,11 +7,13 @@ Sistema antigo: https://github.com/lauralves/sistema-pizzaria-java
 
 Diagrama de caso de uso:
 
-![diagram-860333380840083611](https://github.com/lauralves/refactor-sistema-senac/assets/105663730/8d601f46-fdcc-49a2-b7bf-75e99d98498a)
+![diagram-16673951957649209742](https://github.com/lauralves/sistema-itemflow-spring-boot-angular/assets/105663730/6f0d4a63-18f8-4b29-aede-70e97ec0437d)
+
 
 Diagrama de classe:
 
-![diagram-10138868031365747985](https://github.com/lauralves/sistema-itemflow-spring-boot-angular/assets/105663730/8d3b3258-4671-4edd-8db6-72788d0dc49a)
+![diagram-3561079869054551936](https://github.com/lauralves/sistema-itemflow-spring-boot-angular/assets/105663730/16254694-e0d5-4b3a-be0c-428e8e7a8551)
+
 
 
 
