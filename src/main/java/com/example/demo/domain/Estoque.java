@@ -31,12 +31,7 @@ public class Estoque {
     @JsonSerialize
     @JsonDeserialize
     private Funcionario funcionario;
-    @OneToMany
-    @NonNull
-    @JoinColumn(name = "ESTOQUE_ID")
-    @JsonSerialize
-    @JsonDeserialize
-    private List<HistoricoVenda> historicoVendas = new ArrayList<>();
+
 
 
     public Estoque() {

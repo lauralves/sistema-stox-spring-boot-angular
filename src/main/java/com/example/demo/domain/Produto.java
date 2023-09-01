@@ -38,6 +38,12 @@ public class Produto {
     @JsonDeserialize
     private Estoque estoque;
 
+    @OneToMany
+    @JoinColumn(name = "PRODUTO_ID")
+    @JsonSerialize
+    @JsonDeserialize
+    private List<HistoricoVenda> historicoVendas = new ArrayList<>();
+
     public Produto() {
 
     }
