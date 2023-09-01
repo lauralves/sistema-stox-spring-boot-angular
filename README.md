@@ -1,4 +1,4 @@
-# refactor-sistema-senac
+# sistema de estoque ItemFlow
 Refatorando sistema desenvolvido no curso de Programador de Sistemas no SENAC para que se adeque as tecnologias mais atuais, utilizando Spring Boot, Angular e Docker.
 
 O sistema foi adaptado de um estoque de uma pizzaria para um estoque de produtos gerais, não se limitando ao seu propósito inicial.
