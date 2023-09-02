@@ -26,23 +26,29 @@ public class Produto {
     private Boolean descontinuado;
     private Double precoVendaUnitario;
     private Double precoCompraUnitario;
+    private Long quantidadeDisponivel;
+
     @ManyToOne
     @JoinColumn(name = "FORNECEDOR_ID")
     @JsonSerialize
     @JsonDeserialize
     private Fornecedor fornecedor;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
     @JoinColumn(name = "ESTOQUE_ID")
     @JsonSerialize
     @JsonDeserialize
     private Estoque estoque;
-
-    @OneToMany
+//
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "PRODUTO_ID")
+    private List<HistoricoVenda> historicoVendas = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "FUNCIONARIO_ID")
     @JsonSerialize
     @JsonDeserialize
-    private List<HistoricoVenda> historicoVendas = new ArrayList<>();
+    private Funcionario funcionario;
 
     public Produto() {
 

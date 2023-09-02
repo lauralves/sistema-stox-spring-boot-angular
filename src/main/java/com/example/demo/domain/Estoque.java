@@ -7,9 +7,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NonNull;
+import org.hibernate.mapping.Set;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @Data
@@ -21,18 +23,10 @@ public class Estoque {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long quantidadeEntrada;
-    private Long quantidadeSaida;
     private LocalDateTime dtEntrada;
     private LocalDateTime dtSaida;
-    @ManyToOne
-    @NonNull
-    @JoinColumn(name = "FUNCIONARIO_ID")
-    @JsonSerialize
-    @JsonDeserialize
-    private Funcionario funcionario;
-
-
+    private Long quantidadeEntrada;
+    private Long quantidadeSaida;
 
     public Estoque() {
     }

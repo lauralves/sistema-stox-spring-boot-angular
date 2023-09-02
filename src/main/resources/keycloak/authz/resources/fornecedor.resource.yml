@@ -1,0 +1,6 @@
+---
+resource:
+  clientId: itemflow-backend
+  name: "fornecedor:resource"
+  uris: ["/api/fornecedor/*"]
+  scopes: ["view", "create", "update", "delete"]

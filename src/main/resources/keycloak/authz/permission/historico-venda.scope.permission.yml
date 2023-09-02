@@ -1,0 +1,18 @@
+---
+scopePermission:
+  clientId: itemflow-backend
+  name: "itemflow:permission:view"
+  description: Permissão de visualização do recurso Historico de Venda
+  resources: ["itemflow:resource"]
+  scopes: ["view"]
+  policies: ["funcionario:role:policy"]
+
+---
+scopePermission:
+  clientId: itemflow-backend
+  name: "itemflow:permission:modify"
+  description: Permissão de modificação (criar, atualizar ou deletar)
+  resources: ["itemflow:resource"]
+  scopes: ["create", "update", "delete"]
+  policies: ["admin:role:policy", "funcionario:role:policy"]
+  decisionStrategy: AFFIRMATIVE

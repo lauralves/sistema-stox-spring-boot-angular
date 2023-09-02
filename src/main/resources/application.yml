@@ -5,6 +5,8 @@ server:
   error:
     include-message: always
 spring:
+  config:
+    import: classpath:policy-enforcer.yml
   jpa:
     show-sql: true
     open-in-view: false
@@ -18,3 +20,38 @@ spring:
     url: jdbc:oracle:thin:@localhost:1521:xe
     username: refactorsistemasenac
     password: refactorsistemasenac
+logging:
+  level:
+    br:
+      jus: ${LOGGING_LEVEL:DEBUG}
+    org:
+      keycloak: ${LOGGING_LEVEL:DEBUG}
+      hibernate:
+        SQL: ${LOGGING_LEVEL:DEBUG}
+        type:
+          descriptor:
+            sql: TRACE
+      springframework:
+        jdbc:
+          core:
+            JdbcTemplate: ${LOGGING_LEVEL:DEBUG}
+keycloak:
+  auth-server-url: ${KEYCLOAK_AUTH_SERVER_URL:http://localhost:8085/auth}
+  bearer-only: true
+  config:
+    base-url: ${KEYCLOAK_CONFIG_BASE_URL:http://localhost:4200/}
+    valid-redirect-url: ${KEYCLOAK_CONFIG_VALID_REDIRECT_URL:http://localhost:4200/*}
+  credentials:
+    secret: ${KEYCLOAK_CREDENTIALS_SECRET:f541e548-ff50-4c97-928d-f296fcd7be9p}
+  realm: ITEMFLOW
+  resource: itemflow-backend
+  ssl-required: external
+  use-resource-role-mappings: true
+  policy-enforcer-config:
+    enforcement-mode: ENFORCING
+    lazy-load-paths: false
+    http-method-as-scope: false
+  security-constraints:
+    - authRoles: [ "*" ]
+      security-collections:
+        - patterns: [ "/api/*" ]

@@ -20,7 +20,7 @@ public class Funcionario {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "TIPO_FUNCIONARIO_ID")
-    private Fornecedor fornecedor;
+    private TipoFuncionario tipoFuncionario;
 
     public Funcionario() {
     }

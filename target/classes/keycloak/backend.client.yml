@@ -1,9 +1,9 @@
 ---
 client:
-  name: "sge-backend"
+  name: "itemflow-backend"
   secret: ${keycloak.client.secret}
-  baseUrl: /sge
-  redirectUris: ["/sge/*"]
+  baseUrl: /itemflow
+  redirectUris: ["/itemflow/*"]
   serviceAccountEnabled: true
   authorizationServicesEnabled: true
   roles:

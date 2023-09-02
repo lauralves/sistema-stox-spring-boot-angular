@@ -1,0 +1,6 @@
+---
+resource:
+  clientId: itemflow-backend
+  name: "estoque:resource"
+  uris: ["/api/estoque/*"]
+  scopes: ["view", "create", "update", "delete"]

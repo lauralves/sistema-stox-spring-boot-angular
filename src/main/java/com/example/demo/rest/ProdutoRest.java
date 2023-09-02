@@ -1,31 +1,31 @@
 package com.example.demo.rest;
 
 
+import com.example.demo.domain.Estoque;
 import com.example.demo.domain.Produto;
 import com.example.demo.repository.ProdutoRepository;
-import com.example.demo.service.CadastrarProdutoService;
+import com.example.demo.service.CadastrarEstoqueService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/produto")
 public class ProdutoRest {
 
     @Autowired
-    private CadastrarProdutoService produtoService;
+    private CadastrarEstoqueService produtoService;
 
+    @Autowired
     private ProdutoRepository produtoRepository;
     @GetMapping
-    public ResponseEntity<List<Produto>> findAllProdutos() {
-        return ResponseEntity.ok(
-               produtoService.findAllProduto()
-        );
+    public ResponseEntity<Page<Produto>> findAllProdutos(Pageable pageable) {
+        Page<Produto> produtos = this.produtoRepository.findAll(pageable);
+        return ResponseEntity.ok(produtos);
     }
 
     @GetMapping("/{id}")
@@ -37,8 +37,8 @@ public class ProdutoRest {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<?> createProduto(@RequestBody Long produto) {
-        return ResponseEntity.ok(produtoService.exec(produto));
+    public ResponseEntity<?> createProduto(@RequestBody Produto produto, Estoque estoque) {
+        return ResponseEntity.ok(produtoService.exec(produto, estoque));
     }
 
 //    @PutMapping("/{id}/atualizar")

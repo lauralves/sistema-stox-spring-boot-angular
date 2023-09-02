@@ -1,0 +1,7 @@
+policy-enforcer-config:
+  paths:
+    - path: /swagger-ui/*
+      enforcement-mode: DISABLED
+    - path: /v3/*
+      enforcement-mode: DISABLED
+

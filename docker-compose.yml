@@ -10,22 +10,22 @@ services:
       - ORACLE_ALLOW_REMOTE=true
     volumes:
       - ./src/main/resources/docker:/docker-entrypoint-initdb.d
-#  sge-keycloak:
-#      image: jboss/keycloak:13.0.1
-#      container_name: keycloak-container13.0.1
-#      command: [ "-b", "0.0.0.0",
-#                 "-Dkeycloak.migration.action=import",
-#                 "-Dkeycloak.migration.provider=dir",
-#                 "-Dkeycloak.migration.dir=/tmp/jboss/keycloak/realm-config",
-#                 "-Dkeycloak.migration.strategy=IGNORE_EXISTING",
-#                 "-Djboss.socket.binding.port-offset=5",
-#                 "-Dkeycloak.profile.feature.upload_scripts=enabled" ]
-#      volumes:
-#        - ./src/main/resources/docker/keycloak/realm-config:/tmp/jboss/keycloak/realm-config
-#        - ~/apps01/kc11.0.1/db:/tmp/jboss/keycloak/standalone/data
-#      environment:
-#        - KEYCLOAK_USER=admin
-#        - KEYCLOAK_PASSWORD=admin
-#        - DB_VENDOR=h2
-#      ports:
-#        - 8085:8085
+  itemflow-keycloak:
+      image: jboss/keycloak:13.0.1
+      container_name: keycloak-container13.0.1
+      command: [ "-b", "0.0.0.0",
+                 "-Dkeycloak.migration.action=import",
+                 "-Dkeycloak.migration.provider=dir",
+                 "-Dkeycloak.migration.dir=/tmp/jboss/keycloak/realm-config",
+                 "-Dkeycloak.migration.strategy=IGNORE_EXISTING",
+                 "-Djboss.socket.binding.port-offset=5",
+                 "-Dkeycloak.profile.feature.upload_scripts=enabled" ]
+      volumes:
+        - ./src/main/resources/docker/keycloak/realm-config:/tmp/jboss/keycloak/realm-config
+        - ~/apps01/kc11.0.1/db:/tmp/jboss/keycloak/standalone/data
+      environment:
+        - KEYCLOAK_USER=admin
+        - KEYCLOAK_PASSWORD=admin
+        - DB_VENDOR=h2
+      ports:
+        - 8085:8085

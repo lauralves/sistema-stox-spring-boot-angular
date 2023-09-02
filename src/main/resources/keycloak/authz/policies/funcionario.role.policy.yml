@@ -1,8 +1,8 @@
 ---
 rolePolicy:
-  clientId: sge-backend
+  clientId: itemflow-backend
   name: "funcionario:role:policy"
   description: Role FUNCIONARIO
   client:
-    name: "sge-backend"
+    name: "itemflow-backend"
     roles: ["FUNCIONARIO"]

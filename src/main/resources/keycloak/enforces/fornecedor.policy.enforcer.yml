@@ -1,0 +1,16 @@
+policy-enforcer-config:
+  paths:
+    - path: /api/fornecedor/*
+      methods:
+        - method: GET
+          scopes: ["view"]
+        - method: POST
+          scopes: ["create"]
+    - path: /api/fornecedor/{id}
+      methods:
+        - method: GET
+          scopes: ["view"]
+        - method: PUT
+          scopes: ["update"]
+        - method: DELETE
+          scopes: ["delete"]

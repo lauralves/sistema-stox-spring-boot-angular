@@ -15,7 +15,8 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
-
+		<keycloak.version>13.0.1</keycloak.version>
+		<keycloak.realm>ITEMFLOW</keycloak.realm>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,7 +27,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client -->
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-spring-boot-starter</artifactId>
+			<version>${keycloak.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.keycloak/keycloak-core -->
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-core</artifactId>
+			<version>22.0.1</version>
+		</dependency>
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
@@ -56,6 +68,40 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<rules>
+						<requireEnvironmentVariable>
+							<variableName>SPRING_DATASOURCE_URL</variableName>
+						</requireEnvironmentVariable>
+						<requireEnvironmentVariable>
+							<variableName>SPRING_DATASOURCE_USERNAME</variableName>
+						</requireEnvironmentVariable>
+						<requireEnvironmentVariable>
+							<variableName>SPRING_DATASOURCE_PASSWORD</variableName>
+						</requireEnvironmentVariable>
+						<requireEnvironmentVariable>
+							<variableName>KEYCLOAK_AUTH_SERVER_URL</variableName>
+						</requireEnvironmentVariable>
+						<requireEnvironmentVariable>
+							<variableName>KEYCLOAK_CONFIG_BASE_URL</variableName>
+						</requireEnvironmentVariable>
+						<requireEnvironmentVariable>
+							<variableName>KEYCLOAK_CONFIG_VALID_REDIRECT_URL</variableName>
+						</requireEnvironmentVariable>
+						<requireEnvironmentVariable>
+							<variableName>KEYCLOAK_CREDENTIALS_SECRET</variableName>
+						</requireEnvironmentVariable>
+						<requireEnvironmentVariable>
+							<variableName>LOGGING_LEVEL</variableName>
+						</requireEnvironmentVariable>
+					</rules>
+					<fail>true</fail>
 				</configuration>
 			</plugin>
 		</plugins>
