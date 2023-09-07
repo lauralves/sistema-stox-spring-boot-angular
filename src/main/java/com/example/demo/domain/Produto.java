@@ -1,14 +1,16 @@
 package com.example.demo.domain;
 
+import com.example.demo.domain.databind.EstoqueDatabind;
+import com.example.demo.domain.databind.FornecedorDatabind;
+import com.example.demo.domain.databind.FuncionarioDatabind;
+import com.example.demo.domain.databind.HistoricoVendaDatabind;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NonNull;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,16 +30,14 @@ public class Produto {
     private Double precoCompraUnitario;
     private Long quantidadeDisponivel;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "FORNECEDOR_ID")
-    @JsonSerialize
-    @JsonDeserialize
+    @JsonSerialize(using = FornecedorDatabind.IdSerializer.class)
+    @JsonDeserialize(using = FornecedorDatabind.IdDeserializer.class)
     private Fornecedor fornecedor;
 
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
     @JoinColumn(name = "ESTOQUE_ID")
-    @JsonSerialize
-    @JsonDeserialize
     private Estoque estoque;
 //
     @OneToMany(fetch = FetchType.LAZY)
@@ -46,8 +46,8 @@ public class Produto {
 
     @ManyToOne
     @JoinColumn(name = "FUNCIONARIO_ID")
-    @JsonSerialize
-    @JsonDeserialize
+    @JsonSerialize(using = FuncionarioDatabind.IdSerializer.class)
+    @JsonDeserialize(using = FuncionarioDatabind.IdDeserializer.class)
     private Funcionario funcionario;
 
     public Produto() {

@@ -70,41 +70,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>3.1.0</version>
-				<configuration>
-					<rules>
-						<requireEnvironmentVariable>
-							<variableName>SPRING_DATASOURCE_URL</variableName>
-						</requireEnvironmentVariable>
-						<requireEnvironmentVariable>
-							<variableName>SPRING_DATASOURCE_USERNAME</variableName>
-						</requireEnvironmentVariable>
-						<requireEnvironmentVariable>
-							<variableName>SPRING_DATASOURCE_PASSWORD</variableName>
-						</requireEnvironmentVariable>
-						<requireEnvironmentVariable>
-							<variableName>KEYCLOAK_AUTH_SERVER_URL</variableName>
-						</requireEnvironmentVariable>
-						<requireEnvironmentVariable>
-							<variableName>KEYCLOAK_CONFIG_BASE_URL</variableName>
-						</requireEnvironmentVariable>
-						<requireEnvironmentVariable>
-							<variableName>KEYCLOAK_CONFIG_VALID_REDIRECT_URL</variableName>
-						</requireEnvironmentVariable>
-						<requireEnvironmentVariable>
-							<variableName>KEYCLOAK_CREDENTIALS_SECRET</variableName>
-						</requireEnvironmentVariable>
-						<requireEnvironmentVariable>
-							<variableName>LOGGING_LEVEL</variableName>
-						</requireEnvironmentVariable>
-					</rules>
-					<fail>true</fail>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
-
 </project>

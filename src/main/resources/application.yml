@@ -5,8 +5,6 @@ server:
   error:
     include-message: always
 spring:
-  config:
-    import: classpath:policy-enforcer.yml
   jpa:
     show-sql: true
     open-in-view: false
@@ -25,16 +23,16 @@ logging:
     br:
       jus: ${LOGGING_LEVEL:DEBUG}
     org:
-      keycloak: ${LOGGING_LEVEL:DEBUG}
+      keycloak: DEBUG
       hibernate:
-        SQL: ${LOGGING_LEVEL:DEBUG}
+        SQL: DEBUG
         type:
           descriptor:
-            sql: TRACE
+            sql: DEBUG
       springframework:
         jdbc:
           core:
-            JdbcTemplate: ${LOGGING_LEVEL:DEBUG}
+            JdbcTemplate: DEBUG
 keycloak:
   auth-server-url: ${KEYCLOAK_AUTH_SERVER_URL:http://localhost:8085/auth}
   bearer-only: true
