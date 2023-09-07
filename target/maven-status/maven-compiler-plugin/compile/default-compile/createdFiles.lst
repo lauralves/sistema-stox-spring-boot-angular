@@ -3,7 +3,6 @@ com/example/demo/repository/FuncionarioRepository.class
 com/example/demo/domain/databind/HistoricoVendaDatabind$IdSerializer.class
 com/example/demo/domain/databind/ProdutoDatabind.class
 com/example/demo/domain/databind/FuncionarioDatabind.class
-com/example/demo/service/CadastrarEstoqueService.class
 com/example/demo/domain/databind/EstoqueDatabind$IdSerializer.class
 com/example/demo/domain/databind/HistoricoVendaDatabind$IdDeserializer.class
 com/example/demo/repository/ProdutoRepository.class
@@ -13,6 +12,7 @@ com/example/demo/repository/TipoFuncionarioRepository.class
 com/example/demo/domain/databind/FornecedorDatabind$IdSerializer.class
 com/example/demo/domain/Estoque.class
 com/example/demo/repository/EstoqueRepository.class
+com/example/demo/service/AtualizarProdutoService.class
 com/example/demo/domain/HistoricoVenda.class
 com/example/demo/domain/TipoFuncionario.class
 com/example/demo/RefactorSistemaSenacApplication.class
@@ -25,6 +25,7 @@ com/example/demo/domain/databind/FornecedorDatabind$IdDeserializer.class
 com/example/demo/domain/databind/FuncionarioDatabind$IdSerializer.class
 com/example/demo/service/FornecedorService.class
 com/example/demo/repository/FornecedorRepository.class
+com/example/demo/service/CadastrarProdutoService.class
 com/example/demo/domain/databind/HistoricoVendaDatabind.class
 com/example/demo/domain/databind/TipoFuncionarioDatabind$IdDeserializer.class
 com/example/demo/domain/databind/EstoqueDatabind$IdDeserializer.class

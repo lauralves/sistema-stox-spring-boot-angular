@@ -4,7 +4,7 @@ package com.example.demo.rest;
 import com.example.demo.domain.Estoque;
 import com.example.demo.domain.Produto;
 import com.example.demo.repository.ProdutoRepository;
-import com.example.demo.service.CadastrarEstoqueService;
+import com.example.demo.service.CadastrarProdutoService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 public class ProdutoRest {
 
     @Autowired
-    private CadastrarEstoqueService produtoService;
+    private CadastrarProdutoService produtoService;
 
     @Autowired
     private ProdutoRepository produtoRepository;

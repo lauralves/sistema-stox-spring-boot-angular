@@ -7,8 +7,6 @@
   "fornecedor": 2,
   "funcionario": 1,
   "estoque": {
-      "dtEntrada": " 2023-09-02T08:00:00",
-      "dtSaida":  "2023-09-02T08:00:00",
       "quantidadeEntrada": 50,
       "quantidadeSaida": 20
   }

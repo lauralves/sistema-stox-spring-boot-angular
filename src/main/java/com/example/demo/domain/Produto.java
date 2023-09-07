@@ -36,13 +36,13 @@ public class Produto {
     @JsonDeserialize(using = FornecedorDatabind.IdDeserializer.class)
     private Fornecedor fornecedor;
 
-    @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "ESTOQUE_ID")
     private Estoque estoque;
 //
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PRODUTO_ID")
-    private List<HistoricoVenda> historicoVendas = new ArrayList<>();
+//    @OneToMany(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "PRODUTO_ID")
+//    private List<HistoricoVenda> historicoVendas = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "FUNCIONARIO_ID")

@@ -1,9 +1,10 @@
-/home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/service/CadastrarEstoqueService.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/rest/ProdutoRest.java
+/home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/service/AtualizarProdutoService.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/rest/FuncionarioRest.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/Funcionario.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/Fornecedor.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/databind/HistoricoVendaDatabind.java
+/home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/service/CadastrarProdutoService.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/repository/EstoqueRepository.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/service/FuncionarioService.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/Produto.java
