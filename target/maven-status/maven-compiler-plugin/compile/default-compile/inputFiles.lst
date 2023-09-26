@@ -17,7 +17,6 @@
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/databind/EstoqueDatabind.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/RefactorSistemaSenacApplication.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/databind/ProdutoDatabind.java
-/home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/service/FornecedorService.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/databind/TipoFuncionarioDatabind.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/repository/FornecedorRepository.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/Estoque.java

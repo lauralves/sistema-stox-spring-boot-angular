@@ -23,7 +23,6 @@ com/example/demo/domain/databind/FuncionarioDatabind$IdDeserializer.class
 com/example/demo/service/FuncionarioService.class
 com/example/demo/domain/databind/FornecedorDatabind$IdDeserializer.class
 com/example/demo/domain/databind/FuncionarioDatabind$IdSerializer.class
-com/example/demo/service/FornecedorService.class
 com/example/demo/repository/FornecedorRepository.class
 com/example/demo/service/CadastrarProdutoService.class
 com/example/demo/domain/databind/HistoricoVendaDatabind.class
