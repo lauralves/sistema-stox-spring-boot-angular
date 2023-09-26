@@ -4,6 +4,7 @@ package com.example.demo.rest;
 import com.example.demo.domain.Estoque;
 import com.example.demo.domain.Produto;
 import com.example.demo.repository.ProdutoRepository;
+import com.example.demo.service.AtualizarProdutoService;
 import com.example.demo.service.CadastrarProdutoService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class ProdutoRest {
 
     @Autowired
     private CadastrarProdutoService produtoService;
+
+    @Autowired
+    private AtualizarProdutoService atualizarProdutoService;
 
     @Autowired
     private ProdutoRepository produtoRepository;
@@ -41,8 +45,8 @@ public class ProdutoRest {
         return ResponseEntity.ok(produtoService.exec(produto, estoque));
     }
 
-//    @PutMapping("/{id}/atualizar")
-//    public ResponseEntity<Produto> updateproduto(@PathVariable Long id, @RequestBody Produto produto) {
-//        return ResponseEntity.ok(produtoService.updateProduto(id, produto));
-//    }
+    @PatchMapping("/{id}/atualizar")
+    public ResponseEntity<Produto> updateProdutoEmEstoque(@PathVariable Long id, @RequestBody Produto produto) {
+        return ResponseEntity.ok(atualizarProdutoService.exec(id, produto));
+    }
 }
