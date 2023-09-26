@@ -15,19 +15,6 @@ import java.util.Optional;
 public class FuncionarioService {
     @Autowired
     private FuncionarioRepository funcionarioRepository;
-
-    public List<Funcionario> findAllFuncionarios (){
-        return this.funcionarioRepository.findAll();
-    }
-    public Optional<Funcionario> findFuncionarioById (Long id) {
-        return this.funcionarioRepository.findById(id);
-    }
-    public void deleteFuncionarioById (Long id){
-        this.funcionarioRepository.deleteById(id);
-    }
-    public Funcionario createFuncionario (Funcionario funcionario) {
-        return this.funcionarioRepository.save(funcionario);
-    }
     public Funcionario updateFuncionario(Long id, Funcionario funcionario) {
         Funcionario f = funcionarioRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Funcionário não encontrado."));
         f.setNome(funcionario.getNome());

@@ -2,6 +2,7 @@ package com.example.demo.rest;
 
 
 import com.example.demo.domain.Funcionario;
+import com.example.demo.repository.FuncionarioRepository;
 import com.example.demo.service.FuncionarioService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,25 +15,27 @@ import java.util.List;
 @RequestMapping(value = "/api/funcionario")
 public class FuncionarioRest {
     @Autowired
+    private FuncionarioRepository funcionarioRepository;
+    @Autowired
     private FuncionarioService funcionarioService;
 
     @GetMapping(value = "/all")
     public ResponseEntity<List<Funcionario>> findAllFuncionarios() {
-        List<Funcionario> f = funcionarioService.findAllFuncionarios();
+        List<Funcionario> f = funcionarioRepository.findAll();
         return ResponseEntity.ok().body(f);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Funcionario> findFuncionarioById(@PathVariable Long id) {
         return ResponseEntity.ok(
-                funcionarioService.findFuncionarioById(id).orElseThrow(() -> new EntityNotFoundException("Funcionário não encontrado."))
+                funcionarioRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Funcionário não encontrado."))
         );
     }
 
     @PostMapping("/create")
     public ResponseEntity<Funcionario> createFuncionario(@RequestBody Funcionario funcionario) {
         return ResponseEntity.ok(
-                funcionarioService.createFuncionario(funcionario)
+                funcionarioRepository.save(funcionario)
         );
     }
 
