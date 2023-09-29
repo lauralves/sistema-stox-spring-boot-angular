@@ -11,17 +11,18 @@ import java.time.LocalDateTime;
 @Entity
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-@Table(name = "HISTORICO_VENDA")
-public class HistoricoVenda {
+@Table(name = "HISTORICO_PRODUTO")
+public class HistoricoProduto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    private Double valorTotal;
+    private LocalDateTime dtCriacao;
     private LocalDateTime dtVenda;
-    private Integer quantidade;
+    private String vendaPor;
+    private Long quantidade;
     private Double comissao;
+   private Double valorTotalVenda;
 
-    public HistoricoVenda() {
+    public HistoricoProduto() {
     }
 }
