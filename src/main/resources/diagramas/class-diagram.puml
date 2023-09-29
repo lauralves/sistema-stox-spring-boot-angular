@@ -18,6 +18,7 @@ package ItemFlow <<Frame>>{
         - descontinuado: Boolean
         - precoVendaUnitario: Double
         - precoCompraUnitario: Double
+
     }
 
     class Estoque {
@@ -33,13 +34,34 @@ package ItemFlow <<Frame>>{
         - login: String
         - senha: String
     }
-
-    class HistoricoVenda {
+    class Venda{
         - id: Long
+        - dtVenda: LocalDateTime
+        - vendaPor: String
+        - quantidade: Long
+        - comissao: Double
+        - valorTotalPorProduto: Double
+        - valorTotalVenda: Double
+    }
+
+    class HistoricoProduto {
+        - id: Long
+        - dtCriacao: LocalDateTime
+        - nomeProduto: String
+        - dtEntrada: LocalDateTime
+        - precoCompraUnitario: Double
+        - dtSaida: LocalDateTime
+        - precoVendaUnitario: Double
+        - quantidadeEntrada: Long
+        - quantidadeSaida: Long
+        - valorTotalPorProduto: Double
+        - valorTotalVenda: Double
+        - vendaPor: String
         - valorTotal: Double
         - dtVenda: LocalDateTime
         - quantidade: Integer
         - comissao: Double
+        - fornecedor: String
 
     }
     class Fornecedor <<Setting>>{
@@ -53,10 +75,11 @@ package ItemFlow <<Frame>>{
 
 
 Produto "1..*" --> "1" Funcionario
-Fornecedor "1" <-- "1..*" Produto
-Funcionario "1" --> "1..*" TipoFuncionario
-HistoricoVenda "1" -> "1..*" "Produto"
+Fornecedor "1" <-l- "1..*" Produto
+Funcionario "1" -l-> "1..*" TipoFuncionario
+HistoricoProduto "1..*" --> "1" "Produto"
 Produto "1..*" --u> "1" Estoque
+Venda "1" <-r- "1..*"Produto
 }
 
 @enduml
