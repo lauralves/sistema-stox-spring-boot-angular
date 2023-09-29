@@ -18,10 +18,20 @@ public class HistoricoProduto {
     private Long id;
     private LocalDateTime dtCriacao;
     private LocalDateTime dtVenda;
+    private LocalDateTime dtEntrada;
+    private LocalDateTime dtSaida;
+    private Long quantidadeEntrada;
+    private Long quantidadeSaida;
     private String vendaPor;
     private Long quantidade;
     private Double comissao;
-   private Double valorTotalVenda;
+    private Double valorTotalVenda;
+    private Double valorTotalPorProduto;
+    private String nome;
+    private Double precoVendaUnitario;
+    private Double precoCompraUnitario;
+    private String fornecedor;
+
 
     public HistoricoProduto() {
     }
