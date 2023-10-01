@@ -22,6 +22,7 @@ import java.util.List;
 public class Estoque {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "SEQ_PRODUTO")
     private Long id;
     private LocalDateTime dtEntrada;
     private LocalDateTime dtSaida;

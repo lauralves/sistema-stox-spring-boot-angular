@@ -1,25 +1,24 @@
 package com.example.demo.domain.databind;
 
-import com.example.demo.domain.Funcionario;
-import com.example.demo.domain.HistoricoVenda;
+import com.example.demo.domain.HistoricoProduto;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.*;
 
 import java.io.IOException;
 
-public class HistoricoVendaDatabind {
-    public static class IdDeserializer extends JsonDeserializer<HistoricoVenda> {
+public class VendaDatabind {
+    public static class IdDeserializer extends JsonDeserializer<HistoricoProduto> {
         @Override
-        public HistoricoVenda deserialize(JsonParser jp, DeserializationContext deserializationContext) throws IOException {
+        public HistoricoProduto deserialize(JsonParser jp, DeserializationContext deserializationContext) throws IOException {
             JsonNode node = jp.getCodec().readTree(jp);
             if (node.isNumber()) {
-                HistoricoVenda c = new HistoricoVenda();
+                HistoricoProduto c = new HistoricoProduto();
                 c.setId(node.asLong());
                 return c;
             } else if (node.isObject()) {
                 JsonNode id = node.get("id");
-                HistoricoVenda c = new HistoricoVenda();
+                HistoricoProduto c = new HistoricoProduto();
                 c.setId(id.asLong());
                 return c;
             }
@@ -27,9 +26,9 @@ public class HistoricoVendaDatabind {
         }
     }
 
-    public static class IdSerializer extends JsonSerializer<HistoricoVenda> {
+    public static class IdSerializer extends JsonSerializer<HistoricoProduto> {
         @Override
-        public void serialize(HistoricoVenda entity, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws
+        public void serialize(HistoricoProduto entity, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws
                 IOException {
             jsonGenerator.writeNumber(entity.getId());
         }

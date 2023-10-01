@@ -13,6 +13,7 @@ import java.io.Serializable;
 public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "SEQ_FUNCIONARIO")
     private Long id;
     private String nome;
     private String login;

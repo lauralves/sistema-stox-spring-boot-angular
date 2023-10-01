@@ -1,6 +1,5 @@
 package com.example.demo.domain.databind;
 
-import com.example.demo.domain.HistoricoVenda;
 import com.example.demo.domain.Produto;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;

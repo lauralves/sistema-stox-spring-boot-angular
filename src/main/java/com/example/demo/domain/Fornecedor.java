@@ -11,6 +11,7 @@ import lombok.*;
 public class Fornecedor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "SEQ_FORNECEDOR")
     private Long id;
     private String nome;
 

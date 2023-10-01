@@ -1,9 +1,9 @@
 package com.example.demo.domain;
 
-import com.example.demo.domain.databind.EstoqueDatabind;
 import com.example.demo.domain.databind.FornecedorDatabind;
 import com.example.demo.domain.databind.FuncionarioDatabind;
-import com.example.demo.domain.databind.HistoricoVendaDatabind;
+import com.example.demo.domain.databind.VendaDatabind;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
@@ -22,6 +22,7 @@ import java.util.List;
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "SEQ_PRODUTO")
     private Long id;
     private String nome;
     private String descricao;
@@ -29,6 +30,7 @@ public class Produto {
     private Double precoVendaUnitario;
     private Double precoCompraUnitario;
     private Long quantidadeDisponivel;
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "FORNECEDOR_ID")
@@ -39,10 +41,6 @@ public class Produto {
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "ESTOQUE_ID")
     private Estoque estoque;
-//
-//    @OneToMany(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "PRODUTO_ID")
-//    private List<HistoricoVenda> historicoVendas = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "FUNCIONARIO_ID")
@@ -50,6 +48,16 @@ public class Produto {
     @JsonDeserialize(using = FuncionarioDatabind.IdDeserializer.class)
     private Funcionario funcionario;
 
+    @ManyToOne
+    @JoinColumn(name = "VENDA_ID")
+    @JsonSerialize(using = VendaDatabind.IdSerializer.class)
+    @JsonDeserialize(using = VendaDatabind.IdDeserializer.class)
+    private Venda venda;
+
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "PRODUTO_ID")
+    private List<HistoricoProduto> historicoProdutos = new ArrayList<>();
     public Produto() {
 
     }
