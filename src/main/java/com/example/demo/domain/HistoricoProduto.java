@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Table(name = "HISTORICO_PRODUTO")
 public class HistoricoProduto {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_HISTORICO_PRODUTO")
     @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "SEQ_HISTORICO_PRODUTO")
     private Long id;
     private LocalDateTime dtCriacao;

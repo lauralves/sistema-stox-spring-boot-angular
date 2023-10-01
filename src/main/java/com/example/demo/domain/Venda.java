@@ -17,7 +17,7 @@ import java.util.List;
 @Table(name = "VENDA")
 public class Venda {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_VENDA")
     @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "SEQ_VENDA")
     private Long id;
     private LocalDateTime dtVenda;

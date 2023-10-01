@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Table(name = "FUNCIONARIO")
 public class Funcionario {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_FUNCIONARIO")
     @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "SEQ_FUNCIONARIO")
     private Long id;
     private String nome;

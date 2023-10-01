@@ -12,7 +12,8 @@ import lombok.EqualsAndHashCode;
 @Table(name = "TIPO_FUNCIONARIO")
 public class TipoFuncionario {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_TIPO_FUNCIONARIO")
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "SEQ_TIPO_FUNCIONARIO")
     private Long id;
     private String descricao;
 
