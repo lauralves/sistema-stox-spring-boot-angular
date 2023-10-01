@@ -32,7 +32,7 @@ public class HistoricoProduto {
     private Double precoVendaUnitario;
     private Double precoCompraUnitario;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "FORNECEDOR_ID")
     @JsonSerialize(using = FornecedorDatabind.IdSerializer.class)
     @JsonDeserialize(using = FornecedorDatabind.IdDeserializer.class)
