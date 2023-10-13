@@ -3,7 +3,6 @@
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/Venda.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/service/AtualizarProdutoService.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/rest/FuncionarioRest.java
-/home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/rest/dto/ProdutoDTO.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/databind/VendaDatabind.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/service/VenderProdutoService.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/demo/domain/Funcionario.java
