@@ -21,12 +21,10 @@ public class HistoricoProduto {
     @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "SEQ_HISTORICO_PRODUTO")
     private Long id;
     private LocalDateTime dtCriacao;
-    private LocalDateTime dtVenda;
     private LocalDateTime dtEntrada;
     private LocalDateTime dtSaida;
     private Long quantidadeEntrada;
     private Long quantidadeSaida;
-    private String vendaPor;
     private Double comissao;
     private String nome;
     private Double precoVendaUnitario;

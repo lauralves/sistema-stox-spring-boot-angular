@@ -48,11 +48,11 @@ public class Produto {
     @JsonDeserialize(using = FuncionarioDatabind.IdDeserializer.class)
     private Funcionario funcionario;
 
-    @ManyToOne
-    @JoinColumn(name = "VENDA_ID")
-    @JsonSerialize(using = VendaDatabind.IdSerializer.class)
-    @JsonDeserialize(using = VendaDatabind.IdDeserializer.class)
-    private Venda venda;
+//    @ManyToOne
+//    @JoinColumn(name = "VENDA_ID")
+//    @JsonSerialize(using = VendaDatabind.IdSerializer.class)
+//    @JsonDeserialize(using = VendaDatabind.IdDeserializer.class)
+//    private Venda venda;
 
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)

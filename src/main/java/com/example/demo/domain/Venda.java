@@ -1,10 +1,18 @@
 package com.example.demo.domain;
 
+import com.example.demo.domain.databind.ProdutoDatabind;
+import com.example.demo.domain.databind.VendaDatabind;
+import com.example.demo.repository.ProdutoRepository;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -25,7 +33,20 @@ public class Venda {
     private Long quantidade;
     private Double comissao;
     private Double valorTotalVenda;
-    private Double valorTotalPorProduto;
+
+    @ManyToMany
+    @JoinTable(name = "VENDA_PRODUTO",
+            joinColumns = @JoinColumn(name = "VENDA_ID"),
+            inverseJoinColumns = @JoinColumn(name = "PRODUTO_ID")
+    )
+    @JsonSerialize(using = ProdutoDatabind.IdSerializer.class)
+    @JsonDeserialize(using = ProdutoDatabind.IdDeserializer.class)
+    private List<Produto> produtos = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "VENDA_ID")
+    private List<HistoricoProduto> historicoProdutos = new ArrayList<>();
 
     public Venda(){}
 

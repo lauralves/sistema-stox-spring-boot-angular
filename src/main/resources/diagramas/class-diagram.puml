@@ -79,7 +79,7 @@ Fornecedor "1" <-l- "1..*" Produto
 Funcionario "1" -l-> "1..*" TipoFuncionario
 HistoricoProduto "1..*" --> "1" "Produto"
 Produto "1..*" --u> "1" Estoque
-Venda "1" <-r- "1..*"Produto
+Venda "1" -r-> "1..*"Produto
 }
 
 @enduml

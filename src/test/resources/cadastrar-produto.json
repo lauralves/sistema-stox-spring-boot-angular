@@ -1,12 +1,12 @@
 {
   "descontinuado": 1,
-  "descricao": "desc teste",
-  "nome": "produto nome teste atualizado",
-  "precoCompraUnitario": 50.0,
-  "precoVendaUnitario": 100.0,
-  "fornecedor": 4,
+  "descricao": "desc atualizada",
+  "nome": "produto atualizado",
+  "precoCompraUnitario": 10.0,
+  "precoVendaUnitario": 50.0,
+  "fornecedor": 5,
   "funcionario": 1,
   "estoque": {
-      "quantidadeEntrada": 10
+      "quantidadeEntrada": 50
   }
 }

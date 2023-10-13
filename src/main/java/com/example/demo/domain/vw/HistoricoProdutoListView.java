@@ -28,7 +28,7 @@ import java.time.LocalDateTime;
         "    ES.QUANTIDADE_ENTRADA, " +
         "    ES.QUANTIDADE_SAIDA, " +
         "    F.NOME AS NOME_FORNECEDOR, " +
-        "    ES.QUANTIDADE_SAIDA * P.PRECO_VENDA_UNITARIO AS QT_VENDIDO_POR_PRODUTO " +
+        "    ES.QUANTIDADE_SAIDA * P.PRECO_VENDA_UNITARIO AS VALOR_VENDIDO_POR_PRODUTO " +
         "FROM HISTORICO_PRODUTO HP " +
         "         INNER JOIN PRODUTO P ON HP.PRODUTO_ID = P.ID " +
         "         INNER JOIN ESTOQUE ES ON P.ESTOQUE_ID = ES.ID " +
@@ -44,6 +44,6 @@ public class HistoricoProdutoListView {
     private LocalDateTime dtSaida;
     private Long quantidadeSaida;
     private Long quantidadeEntrada;
-    private Long qtVendidoPorProduto;
+    private Long valorVendidoPorProduto;
     private String nomeFornecedor;
 }

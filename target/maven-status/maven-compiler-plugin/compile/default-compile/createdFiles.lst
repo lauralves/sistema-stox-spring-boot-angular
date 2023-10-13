@@ -27,14 +27,17 @@ com/example/demo/domain/databind/FuncionarioDatabind$IdSerializer.class
 com/example/demo/domain/databind/VendaDatabind.class
 com/example/demo/repository/vw/HistoricoProdutoListViewRepository.class
 com/example/demo/repository/FornecedorRepository.class
+com/example/demo/service/VenderProdutoService.class
 com/example/demo/service/CadastrarProdutoService.class
 com/example/demo/domain/databind/TipoFuncionarioDatabind$IdDeserializer.class
 com/example/demo/domain/databind/EstoqueDatabind$IdDeserializer.class
 com/example/demo/domain/databind/FornecedorDatabind.class
+com/example/demo/repository/VendaRepository.class
 com/example/demo/rest/FuncionarioRest.class
 com/example/demo/domain/Produto.class
 com/example/demo/domain/databind/TipoFuncionarioDatabind$IdSerializer.class
 com/example/demo/domain/Fornecedor.class
+com/example/demo/rest/dto/ProdutoDTO.class
 com/example/demo/domain/Funcionario.class
 com/example/demo/domain/vw/HistoricoProdutoListView.class
 com/example/demo/rest/FornecedorRest.class
