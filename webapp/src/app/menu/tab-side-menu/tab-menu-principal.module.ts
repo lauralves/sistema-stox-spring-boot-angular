@@ -7,11 +7,14 @@ import {TabMenuModule} from "primeng/tabmenu";
 
 
 @NgModule({
-  declarations: [TabMenuPrincipalComponent],
-  imports: [
-    CommonModule,
-    TabMenuPrincipalRoutingModule,
-    TabMenuModule,
-  ]
+    declarations: [TabMenuPrincipalComponent],
+    exports: [
+        TabMenuPrincipalComponent
+    ],
+    imports: [
+        CommonModule,
+        TabMenuPrincipalRoutingModule,
+        TabMenuModule,
+    ]
 })
 export class TabMenuModulePrincipal { }

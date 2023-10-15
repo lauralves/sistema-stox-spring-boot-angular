@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ProdutoPageComponent {
 
+  teste(){
+    console.log("chegou em produto")
+  }
 }
