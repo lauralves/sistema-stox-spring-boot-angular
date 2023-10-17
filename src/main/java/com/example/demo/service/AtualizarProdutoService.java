@@ -43,7 +43,7 @@ public class AtualizarProdutoService {
         if (qtAtual != null) {
             produto.setQuantidadeDisponivel(qtAtual + qtEntradaEstoque);
         }
-        HistoricoProduto historicoProduto = produto.getHistoricoProdutos().get(0);
+        HistoricoProduto historicoProduto = new HistoricoProduto();
 //        var historicoProduto = new HistoricoProduto();
         historicoProduto.setDtEntrada(produto.getEstoque().getDtEntrada());
         historicoProduto.setNome(resource.getNome());

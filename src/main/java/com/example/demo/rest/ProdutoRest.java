@@ -56,7 +56,7 @@ public class ProdutoRest {
         return ResponseEntity.ok(produtoService.exec(produto, estoque));
     }
 
-    @PatchMapping("/{id}/atualizar")
+    @PutMapping("/{id}/atualizar")
     public ResponseEntity<Produto> updateProdutoEmEstoque(@PathVariable Long id, @RequestBody Produto produto) {
         return ResponseEntity.ok(atualizarProdutoService.exec(id, produto));
     }

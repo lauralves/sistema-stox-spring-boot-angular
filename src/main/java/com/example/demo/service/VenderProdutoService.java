@@ -20,6 +20,7 @@ import java.time.LocalDateTime;
 @Service
 public class VenderProdutoService {
 
+    //todo refatorar o service
     @Autowired
     private VendaRepository vendaRepository;
     @Autowired
@@ -43,7 +44,8 @@ public class VenderProdutoService {
         venda.getProdutos().add(produto);
         vendaRepository.save(venda);
 
-        var historicoProduto = produto.getHistoricoProdutos().get(0);
+        var historicoProduto = new HistoricoProduto();
+        historicoProduto.setDtCriacao(LocalDateTime.now());
         historicoProduto.setDtSaida(venda.getDtVenda());
         historicoProduto.setFornecedor(produto.getFornecedor());
         historicoProduto.setQuantidadeSaida(resource.getEstoque().getQuantidadeSaida());
