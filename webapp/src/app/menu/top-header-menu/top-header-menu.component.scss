@@ -26,6 +26,9 @@
     cursor: pointer;
     background-color: var(--surface-card);
   }
+  .menu-nav {
+    display: flex;
+  }
 
   .layout-topbar-logo {
     display: flex;
@@ -66,8 +69,7 @@
     }
   }
 }
-
-@media (max-width: 351px) {
+@media (max-width: 426px) {
   .layout-topbar {
     padding: 0 1rem;
     .layout-topbar-button-bars {
@@ -76,6 +78,9 @@
     .layout-topbar-menu  .layout-topbar-menu-button {
       display: none;
     }
+  }
+  .menu-principal {
+    display: none;
   }
 }
 

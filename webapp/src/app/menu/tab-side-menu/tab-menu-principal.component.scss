@@ -1,0 +1,33 @@
+.layout-side-menu{
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  z-index: 2;
+  min-height: 100%;
+  min-width: 15rem;
+  margin-top: 65px;
+  background-color: lightpink;
+  list-style-type: none;
+
+}
+.side-menu-container{
+  display: block;
+  min-height: 100%;
+
+}
+.side-menu-container-list {
+  padding: 12px;
+  margin-left: 10px;
+}
+.side-menu-container-list li {
+  list-style: none;
+}
+.side-menu-container-list-link   {
+  text-decoration: none;
+  cursor: pointer;
+
+}
+.side-menu-container-list-link:hover {
+  color: white;
+}
+

@@ -3,7 +3,7 @@
     <img src="assets/imagens/logo.png" alt="logo">
     <span>ITEMFLOW</span>
   </a>
-  <button class="layout-topbar-button-bars">
+  <button #menuButton class="layout-topbar-button-bars"  *ngIf="menuToggleEnabled">
     <i class="pi pi-bars"></i>
   </button>
   <div class="layout-topbar-menu">
@@ -15,3 +15,7 @@
     </button>
   </div>
 </div>
+<div class="menu-principal">
+  <app-tab-menu></app-tab-menu>
+</div>
+

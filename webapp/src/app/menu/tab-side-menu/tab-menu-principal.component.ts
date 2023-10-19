@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, NgModule, OnInit, Output} from '@angular/core';
 import {MenuItem} from "primeng/api";
 import {Router} from "@angular/router";
 import {navigation} from "../../app-navigation";
@@ -25,7 +25,6 @@ export class TabMenuPrincipalComponent implements OnInit{
   }
 
   ngOnInit() {
-
     this.router.events.subscribe(value => {
       this.items = navigation
       this.activeItem = this.items[0];
@@ -42,5 +41,7 @@ export class TabMenuPrincipalComponent implements OnInit{
       pointerEvent.preventDefault();
     }
   }
+
+
 
 }

@@ -1,12 +1,13 @@
 /**
  * Array de items do menu para navegar pelo sistema
  */
+import {style} from "@angular/animations";
 
 export const navigation = [
   {
     label: 'Produto',
     routerLink: '/produto',
-    icon: 'pi pi-fw pi-home'
+    icon: 'pi pi-box'
   },
   {
     label: 'Vendas',
