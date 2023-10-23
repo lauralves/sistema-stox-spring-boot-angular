@@ -18,25 +18,22 @@ import java.time.LocalDateTime;
 @Service
 @AllArgsConstructor
 public class CadastrarProdutoService {
-    @Autowired
-    private ProdutoRepository produtoRepository;
+
+    private final ProdutoRepository produtoRepository;
     @Transactional
     public Produto exec(Produto produto, Estoque estoque) {
-        //seta as informações do estoque
-        Long qtEntrada = produto.getEstoque().getQuantidadeEntrada();
-        estoque.setQuantidadeEntrada(qtEntrada);
+
+        estoque.setQuantidadeEntrada(produto.getEstoque().getQuantidadeEntrada());
         estoque.setDtEntrada(LocalDateTime.now());
-        Assert.notNull(estoque.getDtEntrada(), "A data de entrada do produto não pode ser nula");
-        //salva o produto
         produto.setEstoque(estoque);
         produto.setQuantidadeDisponivel(estoque.getQuantidadeEntrada());
 
         HistoricoProduto historicoProduto =new HistoricoProduto();
+        historicoProduto.setDtCriacao(LocalDateTime.now());
         historicoProduto.setDtEntrada(produto.getEstoque().getDtEntrada());
         historicoProduto.setQuantidadeEntrada(produto.getEstoque().getQuantidadeEntrada());
         historicoProduto.setNome(produto.getNome());
         historicoProduto.setFornecedor(produto.getFornecedor());
-        historicoProduto.setDtCriacao(LocalDateTime.now());
         historicoProduto.setPrecoVendaUnitario(produto.getPrecoVendaUnitario());
         historicoProduto.setPrecoCompraUnitario(produto.getPrecoCompraUnitario());
         produto.getHistoricoProdutos().add(historicoProduto);
