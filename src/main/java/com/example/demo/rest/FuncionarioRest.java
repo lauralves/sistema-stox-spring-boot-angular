@@ -3,9 +3,9 @@ package com.example.demo.rest;
 
 import com.example.demo.domain.Funcionario;
 import com.example.demo.repository.FuncionarioRepository;
-import com.example.demo.service.FuncionarioService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,9 +16,6 @@ import java.util.List;
 public class FuncionarioRest {
     @Autowired
     private FuncionarioRepository funcionarioRepository;
-    @Autowired
-    private FuncionarioService funcionarioService;
-
     @GetMapping(value = "/all")
     public ResponseEntity<List<Funcionario>> findAllFuncionarios() {
         List<Funcionario> f = funcionarioRepository.findAll();
@@ -33,15 +30,17 @@ public class FuncionarioRest {
     }
 
     @PostMapping("/create")
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Funcionario> createFuncionario(@RequestBody Funcionario funcionario) {
         return ResponseEntity.ok(
                 funcionarioRepository.save(funcionario)
         );
     }
 
-    @PutMapping("/{id}/atualizar")
+    @PatchMapping("/{id}/atualizar")
     public ResponseEntity<Funcionario> updateFuncionario(@PathVariable Long id, @RequestBody Funcionario funcionario) {
-        return ResponseEntity.ok(funcionarioService.updateFuncionario(id, funcionario));
+        if(!funcionarioRepository.existsById(id)) throw new EntityNotFoundException("Produto não encontrado" + id);
+        return ResponseEntity.ok(funcionarioRepository.save(funcionario));
     }
 
 }

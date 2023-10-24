@@ -1,5 +1,8 @@
 package com.example.demo.domain;
 
+import com.example.demo.domain.databind.TipoFuncionarioDatabind;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,8 +22,10 @@ public class Funcionario {
     private String login;
     private String senha;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "TIPO_FUNCIONARIO_ID")
+    @JsonSerialize(using = TipoFuncionarioDatabind.IdSerializer.class)
+    @JsonDeserialize(using = TipoFuncionarioDatabind.IdDeserializer.class)
     private TipoFuncionario tipoFuncionario;
 
     public Funcionario() {
