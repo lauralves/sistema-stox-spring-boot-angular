@@ -1,8 +1,0 @@
----
-rolePolicy:
-  clientId: itemflow-backend
-  name: "admin:role:policy"
-  description: Role ADMIN
-  client:
-    name: "itemflow-backend"
-    roles: ["ADMIN"]

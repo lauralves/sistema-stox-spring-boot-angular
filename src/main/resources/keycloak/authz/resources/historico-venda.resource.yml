@@ -1,6 +1,0 @@
----
-resource:
-  clientId: itemflow-backend
-  name: "historico-venda:resource"
-  uris: ["/api/historico-venda/*"]
-  scopes: ["view", "create", "update", "delete"]

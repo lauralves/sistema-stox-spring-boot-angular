@@ -1,5 +1,0 @@
-policy-enforcer-config:
-  paths:
-    - path: /actuator/*
-      enforcement-mode: DISABLED
-

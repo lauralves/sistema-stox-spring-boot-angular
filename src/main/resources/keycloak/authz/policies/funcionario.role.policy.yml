@@ -1,8 +1,0 @@
----
-rolePolicy:
-  clientId: itemflow-backend
-  name: "funcionario:role:policy"
-  description: Role FUNCIONARIO
-  client:
-    name: "itemflow-backend"
-    roles: ["FUNCIONARIO"]

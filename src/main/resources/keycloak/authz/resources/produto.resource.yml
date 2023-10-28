@@ -1,6 +1,0 @@
----
-resource:
-  clientId: itemflow-backend
-  name: "produto:resource"
-  uris: ["/api/produto/*"]
-  scopes: ["view", "create", "update", "delete"]

@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
   servlet:
     context-path: /itemflow
   error:
@@ -38,23 +38,19 @@ logging:
         jdbc:
           core:
             JdbcTemplate: DEBUG
-keycloak:
-  auth-server-url: ${KEYCLOAK_AUTH_SERVER_URL:http://localhost:8085/auth}
-  bearer-only: true
-  config:
-    base-url: ${KEYCLOAK_CONFIG_BASE_URL:http://localhost:4200/}
-    valid-redirect-url: ${KEYCLOAK_CONFIG_VALID_REDIRECT_URL:http://localhost:4200/*}
-  credentials:
-    secret: ${KEYCLOAK_CREDENTIALS_SECRET:f541e548-ff50-4c97-928d-f296fcd7be9p}
-  realm: ITEMFLOW
-  resource: itemflow-backend
-  ssl-required: external
-  use-resource-role-mappings: true
-  policy-enforcer-config:
-    enforcement-mode: ENFORCING
-    lazy-load-paths: false
-    http-method-as-scope: false
-  security-constraints:
-    - authRoles: [ "*" ]
-      security-collections:
-        - patterns: [ "/api/*" ]
+        security: INFO
+security:
+  oauth2:
+    client:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/itemflow
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+#        registration:
+#          external:
+#            provider: external
+#            client-name: itemflow
+#            client-id: itemflow-backend
+#            client-secret: 8YfAMQFSkKq0ADBPiPrmF0Gt5grR02IF
+#            scope: openid, offline_access, profile
+#            authorization-grant-type: authorization_code
