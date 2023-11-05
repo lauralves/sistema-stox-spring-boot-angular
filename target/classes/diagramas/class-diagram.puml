@@ -40,7 +40,6 @@ package ItemFlow <<Frame>>{
         - vendaPor: String
         - quantidade: Long
         - comissao: Double
-        - valorTotalPorProduto: Double
         - valorTotalVenda: Double
     }
 
@@ -55,10 +54,9 @@ package ItemFlow <<Frame>>{
         - quantidadeEntrada: Long
         - quantidadeSaida: Long
         - valorTotalPorProduto: Double
-        - valorTotalVenda: Double
         - vendaPor: String
+        - vendaEm: LocalDateTime
         - valorTotal: Double
-        - dtVenda: LocalDateTime
         - quantidade: Integer
         - comissao: Double
         - fornecedor: String
