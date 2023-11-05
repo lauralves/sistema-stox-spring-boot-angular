@@ -24,6 +24,7 @@ public class CadastrarProdutoService {
         estoque.setDtEntrada(LocalDateTime.now());
         produto.setEstoque(estoque);
         produto.setQuantidadeDisponivel(estoque.getQuantidadeEntrada());
+        produto.setDescontinuado(false);
 
         HistoricoProduto historicoProduto =new HistoricoProduto();
         historicoProduto.setDtCriacao(LocalDateTime.now());

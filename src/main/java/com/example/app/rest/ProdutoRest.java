@@ -9,6 +9,7 @@ import com.example.app.repository.ProdutoRepository;
 import com.example.app.repository.vw.HistoricoProdutoListViewRepository;
 import com.example.app.service.AtualizarProdutoService;
 import com.example.app.service.CadastrarProdutoService;
+import com.example.app.service.DescontinuarProdutoService;
 import com.example.app.service.VenderProdutoService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,16 +27,15 @@ public class ProdutoRest {
 
     @Autowired
     private CadastrarProdutoService produtoService;
-
     @Autowired
     private AtualizarProdutoService atualizarProdutoService;
     @Autowired
     private VenderProdutoService venderProdutoService;
-
-//    @Autowired
+    @Autowired
+    private DescontinuarProdutoService descontinuarProdutoService;
     @Autowired
     private ProdutoRepository produtoRepository;
-//    @Autowired
+    @Autowired
     private HistoricoProdutoListViewRepository historicoProdutoListViewRepository;
     @GetMapping
     public ResponseEntity<Page<?>> findAllProdutos(Pageable pageable) {
@@ -53,7 +52,6 @@ public class ProdutoRest {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @PreAuthorize("hasRole('GESTOR')")
     public ResponseEntity<?> createProduto(@RequestBody Produto produto, Estoque estoque) {
         return ResponseEntity.ok(produtoService.exec(produto, estoque));
     }
@@ -70,5 +68,9 @@ public class ProdutoRest {
     @PatchMapping("/{id}/vender-produto")
     public ResponseEntity<Produto> venderProduto(@PathVariable Long id, @RequestBody Produto produto, Venda venda){
         return ResponseEntity.ok(venderProdutoService.exec(id, produto, venda));
+    }
+    @PatchMapping("/{id}/descontinuar-produto")
+    public ResponseEntity<Produto> descontinuarProduto(@PathVariable Long id, @RequestBody Produto resource){
+        return ResponseEntity.ok(descontinuarProdutoService.exec(id, resource));
     }
 }

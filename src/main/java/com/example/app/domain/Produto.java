@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,9 @@ public class Produto {
     private String nome;
     private String descricao;
     private Boolean descontinuado;
+    private LocalDateTime descontinuadoEm;
+    private LocalDateTime descontinuadoPor;
+    private String descontinuadoObservacao;
     private Double precoVendaUnitario;
     private Double precoCompraUnitario;
     private Long quantidadeDisponivel;
