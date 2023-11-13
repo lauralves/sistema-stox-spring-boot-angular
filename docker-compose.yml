@@ -10,9 +10,9 @@ services:
       - ORACLE_ALLOW_REMOTE=true
     volumes:
       - ./src/main/resources/docker:/docker-entrypoint-initdb.d
-  sonarqube:
-    image: sonarqube:community
-    hostname: sonarqube
-    container_name: sonarqube
-    ports:
-      - "9000:9000"
+#  sonarqube:
+#    image: sonarqube:community
+#    hostname: sonarqube
+#    container_name: sonarqube
+#    ports:
+#      - "9000:9000"

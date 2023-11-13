@@ -7,10 +7,7 @@ import com.example.app.domain.Venda;
 import com.example.app.domain.vw.HistoricoProdutoListView;
 import com.example.app.repository.ProdutoRepository;
 import com.example.app.repository.vw.HistoricoProdutoListViewRepository;
-import com.example.app.service.AtualizarProdutoService;
-import com.example.app.service.CadastrarProdutoService;
-import com.example.app.service.DescontinuarProdutoService;
-import com.example.app.service.VenderProdutoService;
+import com.example.app.service.*;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -37,6 +34,8 @@ public class ProdutoRest {
     private ProdutoRepository produtoRepository;
     @Autowired
     private HistoricoProdutoListViewRepository historicoProdutoListViewRepository;
+    @Autowired
+    private ReverterDescontinuarProdutoService reverterDescontinuarProdutoService;
     @GetMapping
     public ResponseEntity<Page<?>> findAllProdutos(Pageable pageable) {
         Page<?> produtos = this.produtoRepository.findAll(pageable);
@@ -49,7 +48,6 @@ public class ProdutoRest {
                 produtoRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Produto não encontrado."))
         );
     }
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<?> createProduto(@RequestBody Produto produto, Estoque estoque) {
@@ -72,5 +70,9 @@ public class ProdutoRest {
     @PatchMapping("/{id}/descontinuar-produto")
     public ResponseEntity<Produto> descontinuarProduto(@PathVariable Long id, @RequestBody Produto resource){
         return ResponseEntity.ok(descontinuarProdutoService.exec(id, resource));
+    }
+    @PatchMapping("/{id}/reverter-descontinuar-produto")
+    public ResponseEntity<Produto> reverterDescontinuarProduto(@PathVariable Long id){
+        return ResponseEntity.ok(reverterDescontinuarProdutoService.exec(id));
     }
 }
