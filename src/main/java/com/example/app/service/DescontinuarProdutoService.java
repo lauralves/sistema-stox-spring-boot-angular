@@ -40,5 +40,4 @@ public class DescontinuarProdutoService {
                 "Para descontinuar um produto a observação deve ser preenchida. ");
     }
 
-
 }

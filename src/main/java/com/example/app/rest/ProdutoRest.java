@@ -38,15 +38,14 @@ public class ProdutoRest {
     private ReverterDescontinuarProdutoService reverterDescontinuarProdutoService;
     @GetMapping
     public ResponseEntity<Page<?>> findAllProdutos(Pageable pageable) {
-        Page<?> produtos = this.produtoRepository.findAll(pageable);
-        return ResponseEntity.ok(produtos);
+        return ResponseEntity.ok(produtoRepository.findAll(pageable));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findprodutoById(@PathVariable Long id) {
         return ResponseEntity.ok(
-                produtoRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Produto não encontrado."))
-        );
+                produtoRepository.findById(id).orElseThrow(() ->
+                        new EntityNotFoundException("Produto não encontrado.")));
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

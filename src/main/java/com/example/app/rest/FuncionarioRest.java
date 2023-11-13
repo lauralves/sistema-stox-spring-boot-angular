@@ -4,32 +4,32 @@ package com.example.app.rest;
 import com.example.app.domain.Funcionario;
 import com.example.app.repository.FuncionarioRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(value = "/api/funcionario")
+@AllArgsConstructor
 public class FuncionarioRest {
-    @Autowired
+
     private FuncionarioRepository funcionarioRepository;
-    @GetMapping(value = "/all")
-    public ResponseEntity<List<Funcionario>> findAllFuncionarios() {
-        List<Funcionario> f = funcionarioRepository.findAll();
-        return ResponseEntity.ok().body(f);
+    @GetMapping
+    public ResponseEntity<Page<Funcionario>> findAllFuncionarios(Pageable pageable) {
+        return ResponseEntity.ok(funcionarioRepository.findAll(pageable));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Funcionario> findFuncionarioById(@PathVariable Long id) {
         return ResponseEntity.ok(
-                funcionarioRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Funcionário não encontrado."))
-        );
+                funcionarioRepository.findById(id).orElseThrow(() ->
+                        new EntityNotFoundException("Funcionário não encontrado.")));
     }
 
-    @PostMapping("/create")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Funcionario> createFuncionario(@RequestBody Funcionario funcionario) {
         return ResponseEntity.ok(
