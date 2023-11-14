@@ -1,12 +1,14 @@
-<div class="layout-side-menu">
-<ng-container *ngFor="let item of items" class="side-menu-container">
-  <div class="side-menu-container-list">
-  <li>
-    <i [ngClass]="item.icon"></i>
-    <a [routerLink]="item.routerLink" class="side-menu-container-list-link">
-      {{item.label}}
-    </a>
-  </li>
-  </div>
-</ng-container>
+<div class="card flex justify-content-center">
+  <p-sidebar [(visible)]="sidebarVisible">
+    <ng-container *ngFor="let item of items" class="side-menu-container">
+        <div class="side-menu-container-list">
+        <li>
+          <i [ngClass]="item.icon"></i>
+          <a [routerLink]="item.routerLink" class="side-menu-container-list-link">
+            {{item.label}}
+          </a>
+        </li>
+        </div>
+      </ng-container>
+  </p-sidebar>
 </div>

@@ -3,8 +3,8 @@
     <img src="assets/imagens/logo.png" alt="logo">
     <span>ITEMFLOW</span>
   </a>
-  <button #menuButton class="layout-topbar-button-bars"  *ngIf="menuToggleEnabled">
-    <i class="pi pi-bars"></i>
+  <button class="layout-topbar-button-bars" (click)="sideBarMenuEvent()">
+    <i class="pi pi-bars" ></i>
   </button>
   <div class="layout-topbar-menu">
     <button class="layout-topbar-menu-button">

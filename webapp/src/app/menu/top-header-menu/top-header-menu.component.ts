@@ -1,4 +1,5 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {TabMenuPrincipalComponent} from "../tab-side-menu/tab-menu-principal.component";
 
 @Component({
   selector: 'app-top-header-menu',
@@ -7,25 +8,18 @@ import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@a
 })
 export class TopHeaderMenuComponent  implements AfterViewInit{
 
-  @Input()
-  menuToggleEnabled = false;
-
-
-  // @ViewChild('menuButton') menuButton: any;
-  constructor(private elementRef: ElementRef) {
-
+  @ViewChild(TabMenuPrincipalComponent) tabMenuPrincipal!: TabMenuPrincipalComponent;
+  constructor() {
   }
 
+  sideBarMenuEvent(): any {
+    if(!this.tabMenuPrincipal.sidebarVisible){
+      return this.tabMenuPrincipal.sidebarVisible = true;
+    }
+  }
   ngAfterViewInit() {
-   // console.log(this.onMenuToggle())
   }
 
-  // onMenuToggle(){
-  //   if (this.elementRef.nativeElement.menuButton) {
-  //     return this.elementRef.nativeElement.querySelector(".menu-principal").style.display == 'none';
-  //   }
-  //   return this.elementRef.nativeElement.querySelector(".menu-principal").style.display == 'flex';
-  // }
 
 
 
