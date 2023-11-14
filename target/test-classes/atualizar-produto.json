@@ -1,0 +1,12 @@
+{
+  "descontinuado": 0,
+  "descricao": "descricao atualizada ",
+  "nome": "produto 1 atualizado",
+  "precoCompraUnitario": 80.0,
+  "precoVendaUnitario": 100.0,
+  "fornecedor": 5,
+  "funcionario": 1,
+  "estoque": {
+      "quantidadeEntrada": 100
+  }
+}
