@@ -4,7 +4,7 @@
         <div class="side-menu-container-list">
         <li>
           <i [ngClass]="item.icon"></i>
-          <a [routerLink]="item.routerLink" class="side-menu-container-list-link">
+          <a [routerLink]="item.routerLink" class="side-menu-container-list-link" (click)="redirectToPage(item)">
             {{item.label}}
           </a>
         </li>
