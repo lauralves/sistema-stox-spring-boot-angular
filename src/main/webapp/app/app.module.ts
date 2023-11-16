@@ -10,6 +10,7 @@ import { TopHeaderMenuComponent } from './menu/top-header-menu/top-header-menu.c
 import {PanelModule} from "primeng/panel";
 import { TableModule } from 'primeng/table';
 import {SideNavOuterToolBarComponent} from "./menu/side-nav-outer-tool-bar/side-nav-outer-tool-bar.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {SideNavOuterToolBarComponent} from "./menu/side-nav-outer-tool-bar/side-
     TabMenuModule,
     TabMenuModulePrincipal,
     PanelModule,
-    TableModule
+    TableModule,
+    HttpClientModule
 
   ],
   providers: [],
