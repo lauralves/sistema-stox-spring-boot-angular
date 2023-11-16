@@ -8,11 +8,15 @@ import {TabMenuModule, TabMenuTemplates} from "primeng/tabmenu";
 import {TabMenuModulePrincipal} from "./menu/tab-side-menu/tab-menu-principal.module";
 import { TopHeaderMenuComponent } from './menu/top-header-menu/top-header-menu.component';
 import {PanelModule} from "primeng/panel";
+import { TableModule } from 'primeng/table';
+import {SideNavOuterToolBarComponent} from "./menu/side-nav-outer-tool-bar/side-nav-outer-tool-bar.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     TopHeaderMenuComponent,
+    SideNavOuterToolBarComponent,
+    SideNavOuterToolBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,8 @@ import {PanelModule} from "primeng/panel";
     PanelMenuModule,
     TabMenuModule,
     TabMenuModulePrincipal,
-    PanelModule
+    PanelModule,
+    TableModule
 
   ],
   providers: [],
