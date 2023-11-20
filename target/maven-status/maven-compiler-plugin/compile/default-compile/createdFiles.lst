@@ -18,6 +18,7 @@ com/example/app/domain/HistoricoProduto.class
 com/example/app/rest/ProdutoRest.class
 com/example/app/domain/databind/ProdutoDatabind$IdSerializer.class
 com/example/app/domain/databind/FornecedorDatabind.class
+core/cors/corsConfig.class
 com/example/app/repository/ProdutoRepository.class
 com/example/app/repository/HistoricoProdutoRepository.class
 com/example/app/repository/vw/HistoricoProdutoListViewRepository.class

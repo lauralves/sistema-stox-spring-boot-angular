@@ -2,6 +2,7 @@
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/domain/databind/FuncionarioDatabind.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/domain/HistoricoProduto.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/rest/ProdutoRest.java
+/home/laura/git/labs/sistema-itemflow/src/main/java/core/cors/corsConfig.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/repository/ProdutoRepository.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/service/ReverterDescontinuarProdutoService.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/rest/FuncionarioRest.java

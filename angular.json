@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sistema-itemflow": {
+    "itemflow": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -63,12 +63,16 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "itemflow:build",
+            "proxyConfig": "proxy.config.json"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "sistema-itemflow:build:production"
+              "browserTarget": "itemflow:build:production"
             },
             "development": {
-              "browserTarget": "sistema-itemflow:build:development"
+              "browserTarget": "itemflow:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sistema-itemflow:build"
+            "browserTarget": "itemflow:build"
           }
         },
         "test": {

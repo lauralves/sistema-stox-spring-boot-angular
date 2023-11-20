@@ -15,7 +15,7 @@ export class ProdutoPageComponent implements OnInit{
   products!: Produto[];
 
   ngOnInit(): void {
-    // this.produtoDataSource();
+    this.produtoDataSource();
     // produtoDataSource = new DataS
   }
 
