@@ -1,0 +1,11 @@
+.layout-wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100vh
+}
+.header-fixed{
+  position: fixed;
+}
+.layout-main-container {
+  flex: 1
+}
