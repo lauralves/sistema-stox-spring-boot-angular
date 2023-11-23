@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProdutoService} from "../service/produto.service";
 import {Produto} from "../domain/produto";
+import {of} from "rxjs";
 
 @Component({
   selector: 'app-produto-page',
@@ -12,20 +13,17 @@ export class ProdutoPageComponent implements OnInit{
   constructor(private produtoService: ProdutoService) {
   }
 
-  products!: Produto[];
+  products: any[] = [];
 
   ngOnInit(): void {
     this.produtoDataSource();
-    // produtoDataSource = new DataS
   }
 
   produtoDataSource(){
-    this.produtoService.findAll().subscribe(
-      (response) => {
-        this.products = response;
-        console.log(this.products)
-      }
-    )
+    this.produtoService.findAll().pipe().subscribe(data => {
+      this.products = data.data
+    })
   }
 
+  protected readonly of = of;
 }
