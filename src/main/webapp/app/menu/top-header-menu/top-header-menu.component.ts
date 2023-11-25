@@ -13,9 +13,7 @@ export class TopHeaderMenuComponent  implements AfterViewInit{
   }
 
   sideBarMenuEvent(): any {
-    if(!this.tabMenuPrincipal.sidebarVisible){
-      return this.tabMenuPrincipal.sidebarVisible = true;
-    }
+      this.tabMenuPrincipal.menuChange()
   }
   ngAfterViewInit() {
   }

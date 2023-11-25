@@ -68,9 +68,9 @@
       background-color: var(--surface-card);
     }
   }
-  .teste {
-    flex-direction: column;
-  }
+}
+.menu-principal {
+  position: fixed;
 }
 @media (max-width: 426px) {
   .layout-topbar {

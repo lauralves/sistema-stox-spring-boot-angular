@@ -1,5 +1,5 @@
-<div class="card flex justify-content-center">
-  <p-sidebar [(visible)]="sidebarVisible">
+<div #visible class="layout-side-menu">
+  <div class="side-menu-layout">
     <ng-container *ngFor="let item of items" class="side-menu-container">
         <div class="side-menu-container-list">
         <li>
@@ -10,5 +10,5 @@
         </li>
         </div>
       </ng-container>
-  </p-sidebar>
+  </div>
 </div>
