@@ -70,7 +70,7 @@
   }
 }
 .menu-principal {
-  position: fixed;
+  display: block;
 }
 @media (max-width: 426px) {
   .layout-topbar {

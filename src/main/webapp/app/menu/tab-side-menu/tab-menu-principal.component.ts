@@ -28,7 +28,6 @@ export class TabMenuPrincipalComponent implements OnInit, AfterViewInit {
     }
   }
   hideMenu(){
-    // console.log(this.sidebarVisible)
     this.elementRef.nativeElement.style.display='none';
     this.sidebarVisible = true;
   }
@@ -38,6 +37,7 @@ export class TabMenuPrincipalComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.sidebarVisible=true;
     this.createMenu();
   }
   ngAfterViewInit() {
