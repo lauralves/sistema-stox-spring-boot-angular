@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ProdutoService} from "../service/produto.service";
-import {Produto} from "../domain/produto";
+import {ProdutoService} from "../../service/produto.service";
+import {Produto} from "../../domain/produto";
 import {of} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-produto-page',
@@ -10,7 +11,7 @@ import {of} from "rxjs";
 })
 export class ProdutoPageComponent implements OnInit{
 
-  constructor(private produtoService: ProdutoService) {
+  constructor(private produtoService: ProdutoService, private route: Router) {
   }
 
   products: any[] = [];
@@ -25,5 +26,8 @@ export class ProdutoPageComponent implements OnInit{
     })
   }
 
+  produtoNew(){
+    this.route.navigateByUrl("/new")
+  }
   protected readonly of = of;
 }

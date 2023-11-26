@@ -9,4 +9,5 @@ export class Produto {
   precoVendaUnitario?: number;
   precoCompraUnitario?: number;
   quantidadeDisponivel?: number;
+  fornecedor?: string;
 }

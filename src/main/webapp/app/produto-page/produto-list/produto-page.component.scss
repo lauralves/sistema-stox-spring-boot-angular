@@ -1,0 +1,13 @@
+:host ::ng-deep .p-button {
+  background-color: lightpink;
+  border-color: lightpink;
+}
+:host ::ng-deep .p-inputgroup {
+  width: auto;
+
+}
+.p-button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
