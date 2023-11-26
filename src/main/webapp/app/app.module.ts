@@ -11,6 +11,7 @@ import {TableModule} from 'primeng/table';
 import {SideNavOuterToolBarComponent} from "./menu/side-nav-outer-tool-bar/side-nav-outer-tool-bar.component";
 import {HttpClientModule} from "@angular/common/http";
 import {TabMenuPrincipalComponent} from "./menu/tab-side-menu/tab-menu-principal.component";
+import { ProdutoEditComponent } from './produto-page/produto-edit/produto-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {TabMenuPrincipalComponent} from "./menu/tab-side-menu/tab-menu-principal
     TopHeaderMenuComponent,
     SideNavOuterToolBarComponent,
     TabMenuPrincipalComponent,
+    ProdutoEditComponent,
   ],
   imports: [
     BrowserModule,

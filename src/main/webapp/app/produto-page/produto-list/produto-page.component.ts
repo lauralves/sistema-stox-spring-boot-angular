@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ProdutoService} from "../../service/produto.service";
-import {Produto} from "../../domain/produto";
 import {of} from "rxjs";
 import {Router} from "@angular/router";
 
@@ -14,7 +13,8 @@ export class ProdutoPageComponent implements OnInit{
   constructor(private produtoService: ProdutoService, private route: Router) {
   }
 
-  products: any[] = [];
+    products: any[] = [];
+
 
   ngOnInit(): void {
     this.produtoDataSource();
@@ -26,8 +26,8 @@ export class ProdutoPageComponent implements OnInit{
     })
   }
 
-  produtoNew(){
-    this.route.navigateByUrl("/new")
+  create(){
+    this.route.navigateByUrl("/produto/new").then(() => {})
   }
   protected readonly of = of;
 }
