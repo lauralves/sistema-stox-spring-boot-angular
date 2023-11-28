@@ -34,6 +34,9 @@
 .side-menu-container-list-link:hover {
   color: white;
 }
+a:visited{
+  color: transparent;
+}
 .side-menu-layout{
   flex-direction: column;
   margin-top: 40px;

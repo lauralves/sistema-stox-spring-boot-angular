@@ -11,7 +11,7 @@ import {TableModule} from 'primeng/table';
 import {SideNavOuterToolBarComponent} from "./menu/side-nav-outer-tool-bar/side-nav-outer-tool-bar.component";
 import {HttpClientModule} from "@angular/common/http";
 import {TabMenuPrincipalComponent} from "./menu/tab-side-menu/tab-menu-principal.component";
-import { ProdutoEditComponent } from './produto-page/produto-edit/produto-edit.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -19,7 +19,6 @@ import { ProdutoEditComponent } from './produto-page/produto-edit/produto-edit.c
     TopHeaderMenuComponent,
     SideNavOuterToolBarComponent,
     TabMenuPrincipalComponent,
-    ProdutoEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +27,9 @@ import { ProdutoEditComponent } from './produto-page/produto-edit/produto-edit.c
     TabMenuModule,
     PanelModule,
     TableModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+
 
   ],
   providers: [],

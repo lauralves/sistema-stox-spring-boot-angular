@@ -16,6 +16,11 @@
 
 .layout-main {
   flex: 1 1 auto;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  margin-bottom: 2rem;
+  box-shadow: var(--card-shadow);
+  border-radius: 12px;
 }
 .layout-sidebar {
   position: fixed;

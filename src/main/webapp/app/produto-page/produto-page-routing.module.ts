@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ProdutoPageComponent} from "./produto-list/produto-page.component";
 import {ProdutoDetailComponent} from "./produto-detail/produto-detail.component";
-import {ProdutoEditComponent} from "./produto-edit/produto-edit.component";
+import {ProdutoDialogComponent} from "./produto-dialog/produto-dialog.component";
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'new',
-    component: ProdutoEditComponent
+    component: ProdutoDialogComponent
   }
 ];
 
