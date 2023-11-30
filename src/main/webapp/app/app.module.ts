@@ -13,6 +13,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {TabMenuPrincipalComponent} from "./menu/tab-side-menu/tab-menu-principal.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ButtonModule} from "primeng/button";
+import { FornecedorComponent } from './fornecedor-page/fornecedor.component';
+import {ToastModule} from "primeng/toast";
+import { FornecedorDialogComponent } from './fornecedor-page/fornecedor-dialog/fornecedor-dialog.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,6 +24,8 @@ import {ButtonModule} from "primeng/button";
     TopHeaderMenuComponent,
     SideNavOuterToolBarComponent,
     TabMenuPrincipalComponent,
+    FornecedorComponent,
+    FornecedorDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,10 @@ import {ButtonModule} from "primeng/button";
     TableModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ButtonModule
+    ButtonModule,
+    ToastModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [],

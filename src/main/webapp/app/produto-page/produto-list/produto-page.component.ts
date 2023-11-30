@@ -1,10 +1,9 @@
-import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProdutoService} from "../../service/produto.service";
 import {of} from "rxjs";
 import {Router} from "@angular/router";
 import {MessageService} from "primeng/api";
 import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
-import {Produto} from "../../domain/produto";
 import {ProdutoDialogComponent} from "../produto-dialog/produto-dialog.component";
 
 @Component({
@@ -12,13 +11,9 @@ import {ProdutoDialogComponent} from "../produto-dialog/produto-dialog.component
   templateUrl: './produto-page.component.html',
   styleUrls: ['./produto-page.component.scss'],
   providers: [MessageService, DialogService]
-
 })
 export class ProdutoPageComponent implements OnInit, OnDestroy {
 
-  // @ViewChild(ProdutoDialogComponent, {static: true})
-  // dialogProduto: ProdutoDialogComponent;
-  //
   constructor(private produtoService: ProdutoService, private route: Router, private messageService: MessageService,
               private dialogService: DialogService) {
     this.produtoDataSource();

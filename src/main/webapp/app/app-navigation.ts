@@ -15,8 +15,8 @@ export const navigation = [
     icon: 'pi pi-fw pi-wallet'
   },
   {
-    label: 'Configurações',
-    icon: 'pi pi-fw pi-cog',
-    items: []
+    label: 'Fornecedor',
+    routerLink: '/fornecedor',
+    icon: 'pi pi-user',
   }
 ]

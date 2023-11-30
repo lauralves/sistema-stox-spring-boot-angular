@@ -12,6 +12,7 @@ import {SideNavOuterToolBarComponent} from "./menu/side-nav-outer-tool-bar/side-
           loadChildren: () => import('./produto-page/produto-page.module').then(m => m.ProdutoPageModule)
         },
         {path: 'venda', loadChildren: () => import('./venda-page/venda-page.module').then(m => m.VendaPageModule)},
+        {path: 'fornecedor', loadChildren: () => import('./fornecedor-page/fornecedor.module').then(m => m.FornecedorModule)}
       ]
     }
   ])],

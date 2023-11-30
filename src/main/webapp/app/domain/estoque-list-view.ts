@@ -1,4 +1,4 @@
-export class Estoque {
+export class EstoqueListView {
   id?: number;
   dtEntrada?: Date;
   dtSaida?: Date;

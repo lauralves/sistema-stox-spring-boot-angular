@@ -1,4 +1,4 @@
-export class Produto {
+export class ProdutoListView {
   id?: number;
   nome?: string;
   descricao?: string;
