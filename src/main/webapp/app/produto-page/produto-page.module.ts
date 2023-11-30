@@ -8,10 +8,12 @@ import {ButtonModule} from "primeng/button";
 import {ProdutoDetailComponent} from "./produto-detail/produto-detail.component";
 import {ToastModule} from "primeng/toast";
 import {DynamicDialogModule} from "primeng/dynamicdialog";
+import {ProdutoDialogComponent} from "./produto-dialog/produto-dialog.component";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
-  declarations: [ProdutoPageComponent, ProdutoDetailComponent],
+  declarations: [ProdutoPageComponent, ProdutoDetailComponent, ProdutoDialogComponent],
   imports: [
     CommonModule,
     ProdutoPageRoutingModule,
@@ -19,6 +21,7 @@ import {DynamicDialogModule} from "primeng/dynamicdialog";
     ButtonModule,
     ToastModule,
     DynamicDialogModule,
+    FormsModule,
 
   ]
 })

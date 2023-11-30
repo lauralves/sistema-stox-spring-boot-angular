@@ -12,6 +12,7 @@ import {SideNavOuterToolBarComponent} from "./menu/side-nav-outer-tool-bar/side-
 import {HttpClientModule} from "@angular/common/http";
 import {TabMenuPrincipalComponent} from "./menu/tab-side-menu/tab-menu-principal.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ButtonModule} from "primeng/button";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     TableModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
+    ButtonModule
 
   ],
   providers: [],

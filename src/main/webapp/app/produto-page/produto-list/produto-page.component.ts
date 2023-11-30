@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ProdutoService} from "../../service/produto.service";
 import {of} from "rxjs";
 import {Router} from "@angular/router";
@@ -11,20 +11,23 @@ import {ProdutoDialogComponent} from "../produto-dialog/produto-dialog.component
   selector: 'app-produto-page',
   templateUrl: './produto-page.component.html',
   styleUrls: ['./produto-page.component.scss'],
-  providers:[MessageService, DialogService]
+  providers: [MessageService, DialogService]
 
 })
 export class ProdutoPageComponent implements OnInit, OnDestroy {
 
+  // @ViewChild(ProdutoDialogComponent, {static: true})
+  // dialogProduto: ProdutoDialogComponent;
+  //
   constructor(private produtoService: ProdutoService, private route: Router, private messageService: MessageService,
               private dialogService: DialogService) {
+    this.produtoDataSource();
   }
 
   products: any[] = [];
   ref: DynamicDialogRef | undefined;
 
   ngOnInit(): void {
-    this.produtoDataSource();
   }
 
   produtoDataSource() {
@@ -34,25 +37,20 @@ export class ProdutoPageComponent implements OnInit, OnDestroy {
   }
 
   create() {
-    this.ref = this.dialogService.open(ProdutoDialogComponent, {
-      header: 'Criar novo produto',
-      width: '70%',
-      contentStyle: {overflow: 'auto'},
-      baseZIndex: 10000,
-      maximizable: true
-    });
-
-    this.ref.onClose.subscribe((produto: Produto) => {
-      if (produto) {
-        this.messageService.add({severity: 'info', summary: 'Product Selected', detail: produto.nome});
-      }
-    });
-
-    this.ref.onMaximize.subscribe((value) => {
-      this.messageService.add({severity: 'info', summary: 'Maximized', detail: `maximized: ${value.maximized}`});
-    });
+    this.openNovoProdutoDialog();
   }
 
+  openNovoProdutoDialog(){
+    this.ref = this.dialogService.open(ProdutoDialogComponent, {
+      header: 'Criar novo produto',
+      width: '50%',
+      height: '50%',
+      contentStyle: {overflow: 'auto'},
+      baseZIndex: 10000,
+      maximizable: true,
+    });
+
+  }
   ngOnDestroy() {
     if (this.ref) {
       this.ref.close();

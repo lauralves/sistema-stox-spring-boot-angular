@@ -2,23 +2,27 @@
   <div class="card flex justify-content-center item-layout">
     <div class="layout-form-item">
       <label>Nome</label>
-      <input type="text" pInputText/>
-  </div>
+      <input type="text" pInputText [ngModel]="produto.nome"/>
+    </div>
+<!--    <div class="layout-form-item">-->
+<!--      <label>Quantidade de entrada</label>-->
+<!--      <input type="text" pInputText [(ngModel)]="produto."/>-->
+<!--    </div>-->
     <div class="layout-form-item">
       <label>Preço de compra</label>
-      <input type="text" pInputText/>
-  </div>
+      <input type="text" pInputText [(ngModel)]="produto.precoCompraUnitario"/>
+    </div>
     <div class="layout-form-item">
       <label>Preço de venda</label>
-      <input type="text" pInputText/>
-  </div>
-    <div class="layout-form-item">
-      <label>Quantidade de entrada</label>
-      <input type="text" pInputText/>
+      <input type="text" pInputText [(ngModel)]="produto.precoVendaUnitario"/>
     </div>
     <div class="layout-form-item">
       <label>Fornecedor</label>
-      <input type="text" pInputText/>
+      <input type="text" pInputText [(ngModel)]="produto.fornecedor"/>
     </div>
-</div>
+  </div>
+  <div class="card flex flex-wrap gap-3 justify-content-center">
+    <p-button label="Salvar" styleClass="p-button-text" (click)="save()"></p-button>
+    <p-button label="Cancelar" styleClass="p-button-danger p-button-text" (onClick)="back()"></p-button>
+  </div>
 </div>
