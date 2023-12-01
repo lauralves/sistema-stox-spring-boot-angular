@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProdutoListView} from "../../domain/produto-list-view";
 import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
 import {FornecedorService} from "../../service/fornecedor.service";
@@ -11,7 +11,7 @@ import {FornecedorListView} from "../../domain/fornecedor-list-view";
   styleUrls: ['./fornecedor-dialog.component.scss'],
   providers: [MessageService, DialogService, FornecedorListView]
 })
-export class FornecedorDialogComponent {
+export class FornecedorDialogComponent implements OnInit{
 
   fornecedor: FornecedorListView;
 
@@ -20,10 +20,26 @@ export class FornecedorDialogComponent {
               private data: FornecedorListView) {
     this.fornecedor = data;
   }
+  ngOnInit() {
+    console.log(this.fornecedor)
+  }
 
   save(){
+    this.fornecedorService.createFornecedor(this.fornecedor).subscribe(
+      (resource: FornecedorListView) =>{
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Fornecedor adicionado com sucesso',
+          detail: resource.nome
+        }),
+          this.ref.close(resource)
+        console.log(resource.nome)
+      }
+    )
+  }
+  save1(){
     this.ref.onClose.subscribe((fornecedor: FornecedorListView) => {
-      this.fornecedorService.createFornecedor(fornecedor).subscribe(
+      this.fornecedorService.createFornecedor(this.fornecedor).subscribe(
         (f: FornecedorListView) => {
           this.messageService.add({
             severity: 'info',
@@ -32,13 +48,12 @@ export class FornecedorDialogComponent {
           });
         }
       )
+      this.ref.close(this.fornecedor)
     });
     this.ref.onMaximize.subscribe((value) => {
       this.messageService.add({severity: 'info', summary: 'Maximized', detail: `maximized: ${value.maximized}`});
     });
-
   }
   back(){
-    this.ref.close()
   }
 }

@@ -33,7 +33,7 @@ public class FornecedorRest {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Fornecedor> createFornecedor(@RequestBody Fornecedor fornecedor) {
-        return ResponseEntity.ok().body(fornecedor);
+        return ResponseEntity.ok(fornecedorRepository.save(fornecedor));
     }
 
 

@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProdutoDialogComponent} from "../produto-page/produto-dialog/produto-dialog.component";
 import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
 import {MessageService} from "primeng/api";
 import {FornecedorListView} from "../domain/fornecedor-list-view";
 import {FornecedorDialogComponent} from "./fornecedor-dialog/fornecedor-dialog.component";
+import {FornecedorService} from "../service/fornecedor.service";
 
 @Component({
   selector: 'app-fornecedor',
@@ -11,17 +12,20 @@ import {FornecedorDialogComponent} from "./fornecedor-dialog/fornecedor-dialog.c
   styleUrls: ['./fornecedor.component.scss'],
   providers: [DialogService, MessageService]
 })
-export class FornecedorComponent {
+export class FornecedorComponent implements OnInit{
 
   ref: DynamicDialogRef | undefined;
   fornecedor: any[] = [];
 
-  constructor(private dialogService: DialogService,) {
-
+  constructor(private dialogService: DialogService, private fornecedorService: FornecedorService) {
+    this.fornecedorService.findAll().subscribe(data =>{
+      this.fornecedor = data.data
+    })
   }
-
   create() {
     this.openNovoProdutoDialog();
+  }
+  ngOnInit() {
   }
 
   openNovoProdutoDialog() {
@@ -32,7 +36,8 @@ export class FornecedorComponent {
       contentStyle: {overflow: 'auto'},
       baseZIndex: 10000,
       maximizable: true,
-    });
-
+    })
+    ;
   }
+
 }
