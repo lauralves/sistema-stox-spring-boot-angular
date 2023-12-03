@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Injector, OnInit} from '@angular/core';
 import {ProdutoDialogComponent} from "../produto-page/produto-dialog/produto-dialog.component";
 import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
 import {MessageService} from "primeng/api";
@@ -25,6 +25,9 @@ export class FornecedorComponent implements OnInit{
   create() {
     this.openNovoProdutoDialog();
   }
+  delete(){
+    this.openDeleteProdutoDialog();
+  }
   ngOnInit() {
   }
 
@@ -36,8 +39,15 @@ export class FornecedorComponent implements OnInit{
       contentStyle: {overflow: 'hidden'},
       baseZIndex: 10000,
       maximizable: true,
-    })
-    ;
+    });
   }
 
+  openDeleteProdutoDialog (){
+    
+  }
+
+  reload(){
+    window.location.reload();
+  
+  }
 }
