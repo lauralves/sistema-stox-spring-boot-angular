@@ -13,6 +13,13 @@
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
-  padding: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
   width: 50%;
+}
+.label-layout{
+  padding-bottom: 10px;
+}
+.input-layout {
+  min-height: 35px;
 }

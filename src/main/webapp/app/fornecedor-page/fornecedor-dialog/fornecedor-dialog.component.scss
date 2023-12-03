@@ -3,16 +3,24 @@
   margin-left: -1rem;
   margin-top: -1rem;
 }
-.item-layout {
-  flex: 0 0 auto;
-  padding: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-}
 .layout-form-item{
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
   padding: 1rem;
-  width: 50%;
+}
+.label-layout{
+  padding-bottom: 10px;
+}
+.input-layout {
+  min-height: 35px;
+}
+.button-style-padding {
+  padding-top: 20px;
+}
+:host ::ng-deep .p-button.p-button-danger .p-buttonset.p-button-danger  .p-button, .p-splitbutton.p-button-danger  .p-button {
+  background-color: none;
+}
+:host ::ng-deep .p-ripple .p-element .p-button-danger .p-button .p-component {
+  background-color: none;
 }

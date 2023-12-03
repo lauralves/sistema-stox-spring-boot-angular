@@ -21,7 +21,6 @@ export class FornecedorDialogComponent implements OnInit{
     this.fornecedor = data;
   }
   ngOnInit() {
-    console.log(this.fornecedor)
   }
 
   save(){
@@ -29,11 +28,10 @@ export class FornecedorDialogComponent implements OnInit{
       (resource: FornecedorListView) =>{
         this.messageService.add({
           severity: 'info',
-          summary: 'Fornecedor adicionado com sucesso',
-          detail: resource.nome
+          summary: 'Fornecedor cadastrado com sucesso',
+          detail: resource.nome,
         }),
           this.ref.close(resource)
-        console.log(resource.nome)
       }
     )
   }
@@ -55,5 +53,6 @@ export class FornecedorDialogComponent implements OnInit{
     });
   }
   back(){
+    this.ref.close();
   }
 }

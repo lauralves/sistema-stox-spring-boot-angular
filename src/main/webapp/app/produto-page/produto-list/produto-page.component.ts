@@ -37,10 +37,10 @@ export class ProdutoPageComponent implements OnInit, OnDestroy {
 
   openNovoProdutoDialog(){
     this.ref = this.dialogService.open(ProdutoDialogComponent, {
-      header: 'Criar novo produto',
-      width: '50%',
-      height: '50%',
-      contentStyle: {overflow: 'auto'},
+      header: 'Cadastrar novo produto',
+      width: '35%',
+      height: '40%',
+      contentStyle: {overflow: 'hidden'},
       baseZIndex: 10000,
       maximizable: true,
     });

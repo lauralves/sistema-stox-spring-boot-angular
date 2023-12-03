@@ -9,11 +9,11 @@ export const navigation = [
     routerLink: '/produto',
     icon: 'pi pi-box'
   },
-  {
-    label: 'Vendas',
-    routerLink: '/venda',
-    icon: 'pi pi-fw pi-wallet'
-  },
+  // {
+  //   label: 'Vendas',
+  //   routerLink: '/venda',
+  //   icon: 'pi pi-fw pi-wallet'
+  // },
   {
     label: 'Fornecedor',
     routerLink: '/fornecedor',
