@@ -31,4 +31,7 @@ export class FornecedorService {
   public createFornecedor(fornecedor: FornecedorListView): Observable<FornecedorListView>{
     return this.httpClient.post<FornecedorListView>(`${this.URL_API}`, fornecedor)
   }
+  public deleteFornecedor(id: number): Observable<FornecedorListView>{
+    return this.httpClient.delete<FornecedorListView>(`${this.URL_API}/${id}`)
+  }
 }

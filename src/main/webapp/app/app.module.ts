@@ -17,6 +17,8 @@ import { FornecedorComponent } from './fornecedor-page/fornecedor.component';
 import {ToastModule} from "primeng/toast";
 import { FornecedorDialogComponent } from './fornecedor-page/fornecedor-dialog/fornecedor-dialog.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ButtonModule,
     ToastModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ConfirmDialogModule
 
   ],
   providers: [],
