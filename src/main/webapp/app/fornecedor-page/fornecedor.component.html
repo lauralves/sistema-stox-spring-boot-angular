@@ -20,7 +20,7 @@
       <tr>
         <td>{{ fornecedor.nome }}
           <div class="buttons-table">
-          <p-button icon="pi pi-pencil" styleClass="p-button-rounded p-button-secondary p-button-text" ></p-button>
+          <p-button icon="pi pi-pencil" styleClass="p-button-rounded p-button-secondary p-button-text" (onClick)="edit(fornecedor.id)" ></p-button>
           <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-secondary p-button-text" (onClick)="delete(fornecedor.id)"></p-button>
         </div>
         </td>
