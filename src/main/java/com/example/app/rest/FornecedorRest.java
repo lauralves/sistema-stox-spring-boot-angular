@@ -1,7 +1,10 @@
 package com.example.app.rest;
 
 import com.example.app.domain.Fornecedor;
+import com.example.app.domain.vw.FornecedorListView;
 import com.example.app.repository.FornecedorRepository;
+import com.example.app.repository.vw.FornecedorListViewRepository;
+
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +13,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,10 +22,11 @@ import org.springframework.web.bind.annotation.*;
 public class FornecedorRest {
 
     private FornecedorRepository fornecedorRepository;
+    private FornecedorListViewRepository fornecedorListViewRepository;
 
     @GetMapping
-    public ResponseEntity<Page<Fornecedor>> findAllFornecedor(Pageable pageable) {
-        return ResponseEntity.ok(fornecedorRepository.findAll(pageable));
+    public ResponseEntity<Page<FornecedorListView>> findAllFornecedor(Pageable pageable) {
+        return ResponseEntity.ok(fornecedorListViewRepository.findAll(pageable));
     }
 
     @GetMapping("/{id}")

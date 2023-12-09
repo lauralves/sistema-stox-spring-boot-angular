@@ -4,6 +4,7 @@ com/example/app/domain/databind/TipoFuncionarioDatabind.class
 com/example/app/domain/databind/VendaDatabind$IdDeserializer.class
 com/example/app/domain/databind/ProdutoDatabind.class
 com/example/app/service/ReverterDescontinuarProdutoService.class
+com/example/app/domain/vw/FornecedorListView.class
 com/example/app/domain/databind/FuncionarioDatabind.class
 com/example/app/repository/FornecedorRepository.class
 com/example/app/rest/FornecedorRest.class
@@ -11,6 +12,7 @@ com/example/app/rest/FuncionarioRest.class
 com/example/app/domain/TipoFuncionario.class
 com/example/app/domain/databind/VendaDatabind.class
 com/example/app/domain/Funcionario.class
+com/example/app/repository/vw/FornecedorListViewRepository.class
 com/example/app/domain/databind/TipoFuncionarioDatabind$IdDeserializer.class
 com/example/app/repository/TipoFuncionarioRepository.class
 com/example/app/domain/Venda.class
