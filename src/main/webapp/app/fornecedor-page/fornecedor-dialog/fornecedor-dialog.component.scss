@@ -17,10 +17,14 @@
 }
 .button-style-padding {
   padding-top: 20px;
-}
-:host ::ng-deep .p-button.p-button-danger .p-buttonset.p-button-danger  .p-button, .p-splitbutton.p-button-danger  .p-button {
-  background-color: none;
-}
-:host ::ng-deep .p-ripple .p-element .p-button-danger .p-button .p-component {
-  background-color: none;
+
+   ::ng-deep .p-button {
+    background:  none;
+    border: none;
+    color: blue;
+  }
+  ::ng-deep .p-button.p-button-danger {
+    color: red;
+  }
+
 }

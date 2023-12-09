@@ -46,7 +46,7 @@ export class FornecedorComponent implements OnInit {
     this.ref = this.dialogService.open(FornecedorDialogComponent, {
       header: 'Cadastrar novo fornecedor',
       width: '30%',
-      height: '30%',
+      height: '25%',
       contentStyle: { overflow: 'hidden' },
       baseZIndex: 10000,
       maximizable: true,
