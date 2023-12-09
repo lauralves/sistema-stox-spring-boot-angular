@@ -5,6 +5,7 @@ import { FornecedorListView } from "../domain/fornecedor-list-view";
 import { FornecedorDialogComponent } from "./fornecedor-dialog/fornecedor-dialog.component";
 import { FornecedorService } from "../service/fornecedor.service";
 import { ProdutoListView } from '../domain/produto-list-view';
+import { Table } from 'primeng/table';
 
 @Component({
   selector: 'app-fornecedor',
@@ -16,6 +17,7 @@ export class FornecedorComponent implements OnInit {
 
   ref: DynamicDialogRef | undefined;
   fornecedor: any[] = [];
+  fornecedorList!: FornecedorListView
 
   constructor(private dialogService: DialogService, private fornecedorService: FornecedorService,
     private confirmationService: ConfirmationService, private messageService: MessageService,
@@ -50,6 +52,7 @@ export class FornecedorComponent implements OnInit {
       maximizable: true,
     }),
     this.ref.onClose.subscribe( () =>{
+      this.fornecedor.push()
         this.messageService.add({
           severity: 'info',
           summary: 'Fornecedor cadastrado com sucesso',
@@ -65,7 +68,8 @@ export class FornecedorComponent implements OnInit {
       accept: () => {
         this.fornecedorService.deleteFornecedor(id)
           .subscribe(() => {
-            this.messageService.add({ severity: 'info', detail: 'Fornecedor excluído com sucesso' });
+            this.fornecedor = this.fornecedor.filter((value) => value.id !== id);
+            this.messageService.add({ severity: 'info', detail: 'Fornecedor excluído com sucesso' ,  life: 3000});
           })
       },
       reject: (type: any) => {
@@ -90,9 +94,19 @@ export class FornecedorComponent implements OnInit {
       contentStyle: { overflow: 'hidden' },
       baseZIndex: 10000,
       maximizable: true,
+    }),
+    this.ref.onClose.subscribe( () =>{
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Fornecedor atualizado com sucesso',
+        })
     });
 
   }
+
+  clear(table: Table) {
+    table.clear();
+}
 
   reload() {
     window.location.reload();

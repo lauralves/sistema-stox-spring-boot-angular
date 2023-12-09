@@ -15,7 +15,6 @@ import { Location } from '@angular/common';
 export class FornecedorDialogComponent implements OnInit {
 
   fornecedor: FornecedorListView;
-  fornecedorId: any;
 
   constructor(public ref: DynamicDialogRef, private fornecedorService: FornecedorService, private messageService: MessageService,
     private dialogService: DialogService,

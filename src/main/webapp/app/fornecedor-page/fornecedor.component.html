@@ -10,10 +10,16 @@
       <button type="button" pButton icon="pi pi-search" styleClass="p-button-warn"></button>
     </div>
   </div>
-  <p-table [value]="fornecedor" [tableStyle]="{ 'min-width': '50rem' }">
+  <p-table
+  #dt1 
+  [value]="fornecedor"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  [paginator]="this.fornecedor.length > 6"
+  [rows]="6"
+  styleClass="p-datatable-striped">
     <ng-template pTemplate="header">
       <tr>
-        <th>Fornecedor</th>
+        <th pSortableColumn="nome" style="width: 20%;">Fornecedor <p-sortIcon field="nome"></p-sortIcon></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-fornecedor>
@@ -21,15 +27,18 @@
         <td>{{ fornecedor.nome }}
           <div class="buttons-table">
           <p-button icon="pi pi-pencil" styleClass="p-button-rounded p-button-secondary p-button-text" (onClick)="edit(fornecedor.id)" ></p-button>
-          <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-secondary p-button-text" (onClick)="delete(fornecedor.id)"></p-button>
+          <p-button  icon="pi pi-trash" styleClass="p-button-rounded p-button-secondary p-button-text" (onClick)="delete(fornecedor.id)"></p-button>
         </div>
         </td>
       </tr>
     </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+          Há no total {{fornecedor ? fornecedor.length : 0 }} fornecedores.
+      </div>
+  </ng-template>
   </p-table>
 </div>
 
-<div class="card flex justify-content-center gap-2">
   <p-toast></p-toast>
-  <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
-</div>
+  <p-confirmDialog [style]=""></p-confirmDialog>
