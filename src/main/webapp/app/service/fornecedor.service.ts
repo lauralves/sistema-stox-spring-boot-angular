@@ -27,11 +27,20 @@ export class FornecedorService {
         })
       )
   }
+  public findFornecedorById(id: number): Observable<FornecedorListView>{
+    return this.httpClient.get<FornecedorListView>(`${this.URL_API}/${id}`)
+  }
+  public save(resource: FornecedorListView): Observable<FornecedorListView> {
+    return resource['id'] ? this.updateFornecedor(resource['id'], resource) : this.createFornecedor(resource)
+  }
 
   public createFornecedor(fornecedor: FornecedorListView): Observable<FornecedorListView>{
     return this.httpClient.post<FornecedorListView>(`${this.URL_API}`, fornecedor)
   }
   public deleteFornecedor(id: number): Observable<FornecedorListView>{
     return this.httpClient.delete<FornecedorListView>(`${this.URL_API}/${id}`)
+  }
+  public updateFornecedor(id: number, fornecedor: FornecedorListView): Observable<FornecedorListView>{
+    return this.httpClient.patch<FornecedorListView>(`${this.URL_API}/${id}`, fornecedor);
   }
 }

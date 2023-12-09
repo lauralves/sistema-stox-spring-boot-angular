@@ -1,9 +1,10 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
+import { DialogService, DynamicDialogConfig, DynamicDialogRef } from "primeng/dynamicdialog";
 import { ConfirmEventType, ConfirmationService, MessageService } from "primeng/api";
 import { FornecedorListView } from "../domain/fornecedor-list-view";
 import { FornecedorDialogComponent } from "./fornecedor-dialog/fornecedor-dialog.component";
 import { FornecedorService } from "../service/fornecedor.service";
+import { ProdutoListView } from '../domain/produto-list-view';
 
 @Component({
   selector: 'app-fornecedor',
@@ -23,6 +24,9 @@ export class FornecedorComponent implements OnInit {
       this.fornecedor = data.data
     })
   }
+  ngOnInit() {
+  }
+
   create() {
     this.openNovoFornecedorDialog();
   }
@@ -30,12 +34,13 @@ export class FornecedorComponent implements OnInit {
     this.openDeleteFornecedorDialog(id);
   }
   edit(id: number) {
-
+    this.fornecedorService.findFornecedorById(id).subscribe(
+      (fornecedor: FornecedorListView) => this.openEditFornecedorDialog(fornecedor)
+    );
   }
-  ngOnInit() {
-  }
 
-  openNovoFornecedorDialog() {
+
+  private openNovoFornecedorDialog() {
     this.ref = this.dialogService.open(FornecedorDialogComponent, {
       header: 'Cadastrar novo fornecedor',
       width: '30%',
@@ -43,20 +48,25 @@ export class FornecedorComponent implements OnInit {
       contentStyle: { overflow: 'hidden' },
       baseZIndex: 10000,
       maximizable: true,
-    });
+    }),
+    this.ref.onClose.subscribe( () =>{
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Fornecedor cadastrado com sucesso',
+        })
+    })
   }
 
-  openDeleteFornecedorDialog(id: number) {
+  private openDeleteFornecedorDialog(id: number) {
     this.confirmationService.confirm({
       message: 'Tem certeza que deseja excluir?',
       header: 'Confirmar exclusão',
       icon: 'pi pi-info-circle',
       accept: () => {
-          this.fornecedorService.deleteFornecedor(id)
-            .subscribe(() => {
-              this.messageService.add({ severity: 'info', detail: 'Fornecedor excluído com sucesso' });
-            })
-            this.reload();
+        this.fornecedorService.deleteFornecedor(id)
+          .subscribe(() => {
+            this.messageService.add({ severity: 'info', detail: 'Fornecedor excluído com sucesso' });
+          })
       },
       reject: (type: any) => {
         switch (type) {
@@ -69,11 +79,22 @@ export class FornecedorComponent implements OnInit {
         }
       }
     });
+  }
+
+  private openEditFornecedorDialog(fornecedor: FornecedorListView) {
+    this.ref = this.dialogService.open(FornecedorDialogComponent, {
+      data: fornecedor,
+      header: 'Atualizar fornecedor',
+      width: '30%',
+      height: '30%',
+      contentStyle: { overflow: 'hidden' },
+      baseZIndex: 10000,
+      maximizable: true,
+    });
 
   }
 
   reload() {
     window.location.reload();
-
   }
 }
