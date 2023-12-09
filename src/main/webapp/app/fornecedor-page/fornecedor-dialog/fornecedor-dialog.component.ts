@@ -37,6 +37,7 @@ export class FornecedorDialogComponent implements OnInit {
       },
     )
   }
+  
   back() {
     this.ref.close();
   }

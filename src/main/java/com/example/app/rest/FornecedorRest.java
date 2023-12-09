@@ -30,7 +30,7 @@ public class FornecedorRest {
     public ResponseEntity<Fornecedor> findFornecedorById(@PathVariable Long id) {
         return ResponseEntity.ok(
                 fornecedorRepository.findById(id)
-                        .orElseThrow(() -> new EntityNotFoundException("Funcionário não encontrado.")));
+                        .orElseThrow(() -> new EntityNotFoundException("Fornecedor não encontrado.")));
     }
 
     @PostMapping

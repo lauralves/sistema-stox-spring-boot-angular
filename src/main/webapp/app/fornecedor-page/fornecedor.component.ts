@@ -51,13 +51,20 @@ export class FornecedorComponent implements OnInit {
       baseZIndex: 10000,
       maximizable: true,
     }),
-    this.ref.onClose.subscribe( () =>{
-      this.fornecedor.push()
-        this.messageService.add({
-          severity: 'info',
-          summary: 'Fornecedor cadastrado com sucesso',
-        })
-    })
+      this.ref.onClose.subscribe((resource) => {
+        if(resource){
+          this.fornecedor.push(resource);
+          this.messageService.add({
+            severity: 'info',
+            summary: 'Fornecedor cadastrado com sucesso',
+          })
+        } else {
+          this.messageService.add({
+            severity: 'warn',
+            summary: 'Você cancelou a operação'
+          })
+        }
+      })
   }
 
   private openDeleteFornecedorDialog(id: number) {
@@ -69,7 +76,7 @@ export class FornecedorComponent implements OnInit {
         this.fornecedorService.deleteFornecedor(id)
           .subscribe(() => {
             this.fornecedor = this.fornecedor.filter((value) => value.id !== id);
-            this.messageService.add({ severity: 'info', detail: 'Fornecedor excluído com sucesso' ,  life: 3000});
+            this.messageService.add({ severity: 'info', detail: 'Fornecedor excluído com sucesso', life: 3000 });
           })
       },
       reject: (type: any) => {
@@ -95,18 +102,37 @@ export class FornecedorComponent implements OnInit {
       baseZIndex: 10000,
       maximizable: true,
     }),
-    this.ref.onClose.subscribe( () =>{
-        this.messageService.add({
-          severity: 'info',
-          summary: 'Fornecedor atualizado com sucesso',
-        })
-    });
+      this.ref.onClose.subscribe((fornecedor) => {
+        if(fornecedor) {
+          this.fornecedor[this.findIndexById(fornecedor.id)] = fornecedor;
+          this.messageService.add({
+            severity: 'info',
+            summary: 'Fornecedor atualizado com sucesso',
+          })
+        } else {
+          this.messageService.add({
+            severity: 'warn',
+            summary: 'Você cancelou a operação'
+          })
+        }
+      });
 
+  }
+  findIndexById(id: number | undefined): number {
+    let index = -1;
+    for (let i = 0; i < this.fornecedor.length; i++) {
+      if (this.fornecedor[i].id === id) {
+        index = i;
+        break;
+      }
+    }
+
+    return index;
   }
 
   clear(table: Table) {
     table.clear();
-}
+  }
 
   reload() {
     window.location.reload();
