@@ -1,0 +1,12 @@
+<div class="form-layout">
+  <div class="card flex justify-content-center item-layout">
+    <div class="layout-form-item">
+      <label class="label-layout">Nome</label>
+      <input class="input-layout" autofocus [required]="true" type="text" pInputText [(ngModel)]="fornecedor.nome"/>
+    </div>
+    <div class="card flex flex-wrap gap-3 justify-content-center button-style-padding">
+      <p-button label="Salvar" styleClass="p-button-text" (click)="save()"></p-button>
+      <p-button label="Cancelar" styleClass="p-button-danger p-button-text" (onClick)="back()"></p-button>
+    </div>
+  </div>
+</div>

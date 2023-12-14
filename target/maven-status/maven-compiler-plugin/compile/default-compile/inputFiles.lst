@@ -4,12 +4,12 @@
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/rest/ProdutoRest.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/domain/vw/FornecedorListView.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/repository/ProdutoRepository.java
+/home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/StoxApplication.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/service/ReverterDescontinuarProdutoService.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/rest/FuncionarioRest.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/rest/FornecedorRest.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/domain/databind/ProdutoDatabind.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/repository/VendaRepository.java
-/home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/RefactorSistemaSenacApplication.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/repository/vw/FornecedorListViewRepository.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/domain/TipoFuncionario.java
 /home/laura/git/labs/sistema-itemflow/src/main/java/com/example/app/domain/Produto.java

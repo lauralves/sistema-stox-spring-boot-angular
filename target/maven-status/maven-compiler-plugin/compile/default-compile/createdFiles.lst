@@ -3,6 +3,7 @@ com/example/app/domain/vw/HistoricoProdutoListView.class
 com/example/app/domain/databind/TipoFuncionarioDatabind.class
 com/example/app/domain/databind/VendaDatabind$IdDeserializer.class
 com/example/app/domain/databind/ProdutoDatabind.class
+com/example/app/StoxApplication.class
 com/example/app/service/ReverterDescontinuarProdutoService.class
 com/example/app/domain/vw/FornecedorListView.class
 com/example/app/domain/databind/FuncionarioDatabind.class
@@ -40,6 +41,5 @@ com/example/app/domain/databind/FornecedorDatabind$IdDeserializer.class
 com/example/app/service/VenderProdutoService.class
 com/example/app/domain/databind/FuncionarioDatabind$IdSerializer.class
 com/example/app/domain/Fornecedor.class
-com/example/app/RefactorSistemaSenacApplication.class
 com/example/app/domain/Produto.class
 com/example/app/domain/databind/FornecedorDatabind$IdSerializer.class

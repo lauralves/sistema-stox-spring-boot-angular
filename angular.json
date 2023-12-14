@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "itemflow": {
+    "stox": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -64,15 +64,15 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "itemflow:build",
+            "browserTarget": "stox:build",
             "proxyConfig": "proxy.config.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "itemflow:build:production"
+              "browserTarget": "stox:build:production"
             },
             "development": {
-              "browserTarget": "itemflow:build:development"
+              "browserTarget": "stox:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "itemflow:build"
+            "browserTarget": "stox:build"
           }
         },
         "test": {
