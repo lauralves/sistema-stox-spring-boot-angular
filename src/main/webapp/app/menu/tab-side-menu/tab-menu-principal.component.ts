@@ -1,14 +1,15 @@
 import {AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {MenuItem} from "primeng/api";
-import {Router} from "@angular/router";
+import {Router, RouterModule} from "@angular/router";
 import {navigation} from "../../app-navigation";
-import {Sidebar} from "primeng/sidebar";
-import {relative} from "@angular/compiler-cli";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tab-menu',
   templateUrl: './tab-menu-principal.component.html',
-  styleUrls: ['./tab-menu-principal.component.scss']
+  styleUrls: ['./tab-menu-principal.component.scss'],
+  standalone: true,
+  imports: [RouterModule, CommonModule],
 })
 //todo refatorar menu visible
 export class TabMenuPrincipalComponent implements OnInit, AfterViewInit {
