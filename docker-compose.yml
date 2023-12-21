@@ -1,18 +1,32 @@
 version: '3'
+
 services:
-  oracle-db-container:
-    image: wnameless/oracle-xe-11g-r2
-    container_name: oracle-db-container
-    ports:
-      - "1521:1521"
+  postgres:
+    image: postgres
     environment:
-      - ORACLE_DISABLE_ASYNCH_IO=true
-      - ORACLE_ALLOW_REMOTE=true
+      POSTGRES_PASSWORD: "stox"
+    ports:
+      - "5432:5432"
     volumes:
-      - ./src/main/resources/docker:/docker-entrypoint-initdb.d
-#  sonarqube:
-#    image: sonarqube:community
-#    hostname: sonarqube
-#    container_name: sonarqube
+      - ./src/main/resources/docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./postgres-data:/var/lib/postgresql/data
+    networks:
+      - postgres-compose-network
+#  keycloak:
+#    image: quay.io/keycloak/keycloak:legacy
+#    environment:
+#      - KEYCLOAK_USER=admin
+#      - KEYCLOAK_PASSWORD=admin
+#      - KC_DB=postgres
+#      - KC_DB_USERNAME=admin
+#      - KC_DB_PASSWORD=admin
+#      - KC_DB_URL_HOST=postgres
+#      - KC_DB_URL_PORT=3306
+#      - KC_DB_SCHEMA=keycloak
 #    ports:
-#      - "9000:9000"
+#      - 8080:8080
+networks:
+  postgres-compose-network:
+    driver: bridge
+
+
