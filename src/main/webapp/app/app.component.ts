@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkWithHref, RouterOutlet } from '@angular/router';
-import { APP_PRIMENG_MODULE } from './provides/app-primeng-module';
-import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +10,5 @@ import { ButtonModule } from 'primeng/button';
 
 })
 export class AppComponent {
-  title = 'itemflow';
+  title = 'stox';
 }

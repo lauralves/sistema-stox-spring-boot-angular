@@ -4,10 +4,10 @@
       <label class="label-layout">Nome</label>
       <input class="input-layout" type="text" pInputText [ngModel]="produto.nome"/>
     </div>
-<!--    <div class="layout-form-item">-->
-<!--      <label>Quantidade de entrada</label>-->
-<!--      <input type="text" pInputText [(ngModel)]="produto."/>-->
-<!--    </div>-->
+   <div class="layout-form-item">
+     <label  class="label-layout">Quantidade de entrada</label>
+     <input class="input-layout" type="text" pInputText [(ngModel)]="produto.quantidadeEntrada"/>
+   </div>
     <div class="layout-form-item">
       <label class="label-layout">Preço de compra</label>
       <input class="input-layout" type="text" pInputText [(ngModel)]="produto.precoCompraUnitario"/>
@@ -18,11 +18,11 @@
     </div>
     <div class="layout-form-item">
       <label class="label-layout">Fornecedor</label>
-      <input class="input-layout" type="text" pInputText [(ngModel)]="produto.fornecedor"/>
+      <p-dropdown [options]="fornecedor" [(ngModel)]="fornecedor" optionLabel="nome" [showClear]="true"></p-dropdown>
     </div>
-    <div class="card flex flex-wrap gap-3 justify-content-center">
-      <p-button label="Salvar" styleClass="p-button-text" (click)="save()"></p-button>
-      <p-button label="Cancelar" styleClass="p-button-danger p-button-text" (onClick)="back()"></p-button>
-    </div>
+  </div>
+  <div class="card flex flex-wrap gap-3 justify-content-center">
+    <p-button label="Salvar" styleClass="p-button-text" (click)="save()"></p-button>
+    <p-button label="Cancelar" styleClass="p-button-danger p-button-text" (onClick)="back()"></p-button>
   </div>
 </div>

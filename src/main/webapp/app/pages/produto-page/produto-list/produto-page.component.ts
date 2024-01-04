@@ -5,16 +5,14 @@ import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
 import { of } from "rxjs";
 import { ProdutoService } from "../../../service/produto.service";
 import { ProdutoDialogComponent } from "../produto-dialog/produto-dialog.component";
-import { TableModule } from 'primeng/table';
-import { ButtonModule } from 'primeng/button';
-import { ToastModule } from 'primeng/toast';
+import { SharedModule } from '../../../provides/shared.module';
 
 @Component({
   selector: 'app-produto-page',
   templateUrl: './produto-page.component.html',
   styleUrls: ['./produto-page.component.scss'],
   providers: [MessageService, DialogService],
-  imports: [TableModule, ButtonModule, ToastModule],
+  imports: [SharedModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   standalone: true,
 })
@@ -44,8 +42,8 @@ export class ProdutoPageComponent implements OnInit, OnDestroy {
   openNovoProdutoDialog(){
     this.ref = this.dialogService.open(ProdutoDialogComponent, {
       header: 'Cadastrar novo produto',
-      width: '35%',
-      height: '40%',
+      width: '600px',
+      height: '450px',
       contentStyle: {overflow: 'hidden'},
       baseZIndex: 10000,
       maximizable: true,

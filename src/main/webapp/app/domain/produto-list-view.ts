@@ -10,4 +10,5 @@ export class ProdutoListView {
   precoCompraUnitario?: number;
   quantidadeDisponivel?: number;
   fornecedor?: string;
+  quantidadeEntrada?: number;
 }

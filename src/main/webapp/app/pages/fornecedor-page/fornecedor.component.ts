@@ -1,11 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { ConfirmEventType, ConfirmationService, MessageService } from "primeng/api";
-import { ButtonModule } from 'primeng/button';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DialogService, DynamicDialogModule, DynamicDialogRef } from "primeng/dynamicdialog";
-import { Table, TableModule } from 'primeng/table';
-import { ToastModule } from 'primeng/toast';
+import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
+import { Table } from 'primeng/table';
 import { FornecedorListView } from "../../domain/fornecedor-list-view";
+import { SharedModule } from '../../provides/shared.module';
 import { FornecedorService } from "../../service/fornecedor.service";
 import { FornecedorDialogComponent } from "./fornecedor-dialog/fornecedor-dialog.component";
 
@@ -14,7 +12,7 @@ import { FornecedorDialogComponent } from "./fornecedor-dialog/fornecedor-dialog
   templateUrl: './fornecedor.component.html',
   styleUrls: ['./fornecedor.component.scss'],
   standalone: true,
-  imports: [TableModule, ButtonModule, ToastModule, ConfirmDialogModule, DynamicDialogModule],
+  imports: [SharedModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [DialogService, MessageService, ConfirmationService, MessageService, FornecedorListView]
 })

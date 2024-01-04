@@ -1,19 +1,17 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, Injector, OnInit } from '@angular/core';
-import { ProdutoListView } from "../../../domain/produto-list-view";
-import { DialogService, DynamicDialogConfig, DynamicDialogRef } from "primeng/dynamicdialog";
-import { FornecedorService } from "../../../service/fornecedor.service";
-import { MessageService } from "primeng/api";
-import { FornecedorListView } from "../../../domain/fornecedor-list-view";
-import { Location } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DialogModule } from 'primeng/dialog';
+import { MessageService } from "primeng/api";
 import { ButtonModule } from 'primeng/button';
+import { DialogService, DynamicDialogConfig, DynamicDialogRef } from "primeng/dynamicdialog";
+import { FornecedorListView } from "../../../domain/fornecedor-list-view";
+import { SharedModule } from '../../../provides/shared.module';
+import { FornecedorService } from "../../../service/fornecedor.service";
 
 @Component({
   selector: 'app-fornecedor-dialog',
   templateUrl: './fornecedor-dialog.component.html',
   styleUrls: ['./fornecedor-dialog.component.scss'],
-  providers: [MessageService, DialogService, FornecedorListView],
+  providers: [SharedModule],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [FormsModule, ButtonModule]

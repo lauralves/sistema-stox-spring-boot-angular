@@ -1,9 +1,6 @@
-// ===========================================================================
-// File: APP.MODULE-PRIMENG.ts
-import { SharedModule, Header, Footer } from 'primeng/api';
 import { TableModule } from 'primeng/table';
-import { Dialog, DialogModule } from 'primeng/dialog';
-import { ConfirmDialog, ConfirmDialogModule } from 'primeng/confirmdialog';
+import {  DialogModule } from 'primeng/dialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
@@ -17,9 +14,14 @@ import { FocusTrapModule } from 'primeng/focustrap';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TreeTableModule } from 'primeng/treetable';
 import { TreeModule } from 'primeng/tree';
-//
-export const APP_PRIMENG_MODULE = [
-	SharedModule,
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+const ANGULAR_MODULES = [
+	FormsModule
+]
+
+const APP_PRIMENG_MODULE = [
 	TableModule,
 	DialogModule,
 	ConfirmDialogModule,
@@ -35,19 +37,25 @@ export const APP_PRIMENG_MODULE = [
 	FocusTrapModule,
 	CheckboxModule,
 	TreeTableModule,
-	TreeModule
-];
-//
-// export const APP_PRIMENG_COMPONENTS = [
-// 	Dialog,
-// 	ConfirmDialog,
-// 	Header,
-// 	Footer
-// ];
-// //
-// import { ConfirmationService } from 'primeng/api';
-// //
-// export const APP_PRIMENG_PROVIDERS = [
-// 	ConfirmationService
-// ];
-// ===========================================================================
+	TreeModule,
+	ButtonModule,
+	 DropdownModule
+]
+
+@NgModule({
+	imports: [
+		APP_PRIMENG_MODULE,
+		ANGULAR_MODULES
+	],
+	exports: [
+		APP_PRIMENG_MODULE,
+		ANGULAR_MODULES
+	],
+	declarations:[
+
+	]
+})
+
+export class SharedModule{
+
+}

@@ -1,11 +1,11 @@
-import {CUSTOM_ELEMENTS_SCHEMA, Component, Injector, OnInit} from '@angular/core';
-import {Location} from "@angular/common";
-import {ProdutoListView} from "../../../domain/produto-list-view";
-import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
-import {MessageService} from "primeng/api";
-import {ProdutoService} from "../../../service/produto.service";
-import { FormsModule } from '@angular/forms';
-import { ButtonModule } from 'primeng/button';
+import { Location } from "@angular/common";
+import { CUSTOM_ELEMENTS_SCHEMA, Component, Injector, OnInit } from '@angular/core';
+import { MessageService } from "primeng/api";
+import { DialogService, DynamicDialogRef } from "primeng/dynamicdialog";
+import { FornecedorListView } from '../../../domain/fornecedor-list-view';
+import { ProdutoListView } from "../../../domain/produto-list-view";
+import { SharedModule } from '../../../provides/shared.module';
+import { ProdutoService } from "../../../service/produto.service";
 
 @Component({
   selector: 'app-produto-edit',
@@ -14,12 +14,13 @@ import { ButtonModule } from 'primeng/button';
   providers: [MessageService, DialogService, ProdutoListView],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   standalone: true,
-  imports: [FormsModule, ButtonModule]
+  imports: [SharedModule]
 })
 export class ProdutoDialogComponent implements OnInit{
   private location: Location;
   produto: ProdutoListView;
-  // estoque: EstoqueListView;
+  fornecedor?: FornecedorListView [];
+
   constructor(private injector: Injector,
               public ref: DynamicDialogRef,
               private dialogService: DialogService,
@@ -32,6 +33,7 @@ export class ProdutoDialogComponent implements OnInit{
 
   ngOnInit() {
   }
+
 
   save(){
     this.ref.onClose.subscribe((produto: ProdutoListView) => {
