@@ -7,7 +7,7 @@ Sistema antigo: https://github.com/lauralves/sistema-pizzaria-java
 
 Diagrama de caso de uso:
 
-![diagram-16673951957649209742](https://github.com/lauralves/sistema-itemflow-spring-boot-angular/assets/105663730/6f0d4a63-18f8-4b29-aede-70e97ec0437d)
+![diagram-2753776646193365042](https://github.com/lauralves/sistema-stox-spring-boot-angular/assets/105663730/94f21657-93af-4646-88f1-b1507c48d50c)
 
 
 Diagrama de classe:
