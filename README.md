@@ -12,7 +12,8 @@ Diagrama de caso de uso:
 
 Diagrama de classe:
 
-![diagram-7369335369117248155](https://github.com/lauralves/sistema-itemflow-spring-boot-angular/assets/105663730/3f2cf9fe-f299-4228-a023-c8e7324e795f)
+![diagram-11138620800326063449](https://github.com/lauralves/sistema-stox-spring-boot-angular/assets/105663730/da22c954-b6b5-46eb-8fe3-29e9c8c20eb4)
+
 
 
 
