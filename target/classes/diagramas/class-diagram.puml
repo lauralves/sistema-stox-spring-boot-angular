@@ -7,10 +7,11 @@ skinparam nodesep 50
 skinparam class {
     BackgroundColor White
     BackgroundColor<<Setting>> Wheat
+    BackgroundColor<<Enum>> Wheat
 }
 
 set separator none
-package ItemFlow <<Frame>>{
+package Stox <<Frame>>{
     class Produto {
         - id: Long
         - nome: String
@@ -32,7 +33,6 @@ package ItemFlow <<Frame>>{
         - id: Long
         - nome: String
         - login: String
-        - senha: String
     }
     class Venda{
         - id: Long
@@ -66,9 +66,10 @@ package ItemFlow <<Frame>>{
         - id: Long
         - nome: String
     }
-    class TipoFuncionario <<Setting>> {
-        - id: Long
-        - tipo: String
+    class TipoFuncionario <<Enum>> {
+        GESTOR
+        ESTOQUISTA
+        VENDEDOR
     }
 
 

@@ -55,7 +55,6 @@ public class FornecedorRest {
         log.info("Requisição para atualizar o registro fornecedor (id={})", id);
         var fornecedor = fornecedorRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Fornecedor não encontrado"));
-        log.info("teste id ", fornecedor.getId());
         fornecedor.setNome(resource.getNome());
         return ResponseEntity.ok(fornecedorRepository.save(fornecedor));
     }

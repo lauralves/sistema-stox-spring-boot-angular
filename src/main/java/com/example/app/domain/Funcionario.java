@@ -1,15 +1,15 @@
 package com.example.app.domain;
 
-import com.example.app.domain.databind.TipoFuncionarioDatabind;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.example.app.domain.enums.TipoFuncionario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "FUNCIONARIO")
 public class Funcionario {
     @Id
@@ -18,14 +18,9 @@ public class Funcionario {
     private Long id;
     private String nome;
     private String login;
-    private String senha;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL, optional = false)
+    @Enumerated(EnumType.ORDINAL)
     @JoinColumn(name = "TIPO_FUNCIONARIO_ID")
-    @JsonSerialize(using = TipoFuncionarioDatabind.IdSerializer.class)
-    @JsonDeserialize(using = TipoFuncionarioDatabind.IdDeserializer.class)
     private TipoFuncionario tipoFuncionario;
 
-    public Funcionario() {
-    }
 }

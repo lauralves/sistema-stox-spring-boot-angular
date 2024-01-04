@@ -1,6 +1,5 @@
 com/example/app/domain/databind/VendaDatabind$IdSerializer.class
 com/example/app/domain/vw/HistoricoProdutoListView.class
-com/example/app/domain/databind/TipoFuncionarioDatabind.class
 com/example/app/domain/databind/VendaDatabind$IdDeserializer.class
 com/example/app/domain/databind/ProdutoDatabind.class
 com/example/app/StoxApplication.class
@@ -10,12 +9,10 @@ com/example/app/domain/databind/FuncionarioDatabind.class
 com/example/app/repository/FornecedorRepository.class
 com/example/app/rest/FornecedorRest.class
 com/example/app/rest/FuncionarioRest.class
-com/example/app/domain/TipoFuncionario.class
 com/example/app/domain/databind/VendaDatabind.class
 com/example/app/domain/Funcionario.class
+com/example/app/domain/enums/TipoFuncionario.class
 com/example/app/repository/vw/FornecedorListViewRepository.class
-com/example/app/domain/databind/TipoFuncionarioDatabind$IdDeserializer.class
-com/example/app/repository/TipoFuncionarioRepository.class
 com/example/app/domain/Venda.class
 com/example/app/domain/HistoricoProduto.class
 com/example/app/rest/ProdutoRest.class
@@ -36,7 +33,6 @@ com/example/app/domain/databind/EstoqueDatabind.class
 com/example/app/service/DescontinuarProdutoService.class
 com/example/app/repository/EstoqueRepository.class
 com/example/app/service/CadastrarProdutoService.class
-com/example/app/domain/databind/TipoFuncionarioDatabind$IdSerializer.class
 com/example/app/domain/databind/FornecedorDatabind$IdDeserializer.class
 com/example/app/service/VenderProdutoService.class
 com/example/app/domain/databind/FuncionarioDatabind$IdSerializer.class
